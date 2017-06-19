@@ -1,6 +1,6 @@
-#InfiPx
+# InfiPx
 
-##Minimum Viable Product
+## Minimum Viable Product
 Infipx is a web application inspired by Instagram build using Ruby on Rails and React/Redux. The goal of this app is to satisfy the following functionality with flawless navigation, plenty of seeds and the most beautiful CSS styling:
 
 -[ ] Hosting on Heroku
