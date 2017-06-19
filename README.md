@@ -1,5 +1,7 @@
 # InfiPx
 
+[Trello](https://trello.com/b/pcv11hLy/instapx)
+
 ## Minimum Viable Product
 InfiPx is a web application inspired by Instagram build using Ruby on Rails and React/Redux. The goal of this app is to satisfy the following functionality with flawless navigation, plenty of seeds and the most beautiful CSS styling:
 
@@ -24,7 +26,7 @@ InfiPx is a web application inspired by Instagram build using Ruby on Rails and 
 * [DB schema][schema]
 * [API endpoints][api-endpoints]
 
-[wireframes]: Wireframes
+[wireframes]: tree/master/docs/Wireframes
 [components]: component-heirarchy.md
 [sample-state]: sample-state.md
 [api-endpoints]: api-endpoints.md
