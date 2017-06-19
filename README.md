@@ -20,13 +20,12 @@ InfiPx is a web application inspired by Instagram build using Ruby on Rails and 
 - [ ] ****BONUS**** direct messaging
 
 
-* [Wireframes][wireframes]
+* [Wireframes](https://github.com/chrishakos/fullstack-InstaClone/tree/master/docs/Wireframes)
 * [React Components][components]
 * [Sample State][sample-state]
 * [DB schema][schema]
 * [API endpoints][api-endpoints]
 
-[wireframes]: tree/master/docs/Wireframes
 [components]: component-heirarchy.md
 [sample-state]: sample-state.md
 [api-endpoints]: api-endpoints.md
