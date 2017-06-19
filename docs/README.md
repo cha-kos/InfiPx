@@ -3,17 +3,17 @@
 ## Minimum Viable Product
 Infipx is a web application inspired by Instagram build using Ruby on Rails and React/Redux. The goal of this app is to satisfy the following functionality with flawless navigation, plenty of seeds and the most beautiful CSS styling:
 
--[ ] Hosting on Heroku
--[ ] Account creation, login, and demo functionality
--[ ] Images (upload, caption)
--[ ] Likes linked to image and user (list of likers)
--[ ] Image comments (extended comment view)
--[ ] Following/Followers
--[ ] Photofeed w/ infinite scroll
--[ ] ****BONUS**** search bar
--[ ] ****BONUS**** direct messaging
--[ ] ****BONUS**** dropdown notification
--[ ] ****BONUS**** best waves in the world surf feed
+- [ ] Hosting on Heroku
+- [ ] Account creation, login, and demo functionality
+- [ ] Images (upload, caption)
+- [ ] Likes linked to image and user (list of likers)
+- [ ] Image comments (extended comment view)
+- [ ] Following/Followers
+- [ ] Photofeed w/ infinite scroll
+- [ ] ****BONUS**** search bar
+- [ ] ****BONUS**** direct messaging
+- [ ] ****BONUS**** dropdown notification
+- [ ] ****BONUS**** best waves in the world surf feed
 
 
 ## Implementation Timeline
