@@ -1,5 +1,5 @@
 ## Component Hierarchy
-**Root*
+**Root**
 **Sign In Container**
 - AuthForm
   - Sign In
