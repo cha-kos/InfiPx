@@ -25,6 +25,15 @@ Method  | URI                    | Description
 `GET`   | `/api/users/:id`       | Get user id
 `PATCH` | `/api/users/:id`       | Edit User attributes
 
+### Follows
+
+Method   | URI                             | Description
+---------|---------------------------------|------------------------------------
+`GET`    | `/api/users/:id/following`      | Get following
+`GET`    | `/api/users/:id/followers`      | Get followers
+`POST`   | `/api/users/:id/follow`         | Current user follows another user
+`DELETE` | `/api/users/:id/follow`         | Current user unfollows another user
+
 ### Photos
 
 Method   | URI                          | Description
@@ -46,15 +55,6 @@ Method   | URI                 | Description
 
 Method   | URI                           | Description
 ---------|-------------------------------|----------------------------
-`POST`   | `/api/photos/:id/likes`       | Current user like a photo
-`DELETE` | `/api/photos/:id/likes`       | Current user unlike a photo
-
-
-### Follows
-
-Method   | URI                             | Description
----------|---------------------------------|------------------------------------
-`GET`    | `/api/users/:id/following`      | Get following
-`GET`    | `/api/users/:id/followers`      | Get followers
-`POST`   | `/api/users/:id/follow`         | Current user follows another user
-`DELETE` | `/api/users/:id/follow`         | Current user unfollows another user
+`POST`   | `/api/photos/:id/likes`       | Current user like photo
+`DELETE` | `/api/photos/:id/likes`       | Current user unlike photo
+`GET`    | `/api/photos/:id/likes/users` | Get user who've liked photo
