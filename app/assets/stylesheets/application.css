@@ -13,3 +13,115 @@
  *= require_tree .
  *= require_self
  */
+ .welcome {
+    flex-grow: 1;
+    justify-content: center;
+    margin: 30px auto 0;
+    max-width: 935px;
+    width: 100%;
+    align-items: stretch;
+    display: flex;
+    flex-shrink: 0;
+    padding: 0;
+    position: relative;
+ }
+
+ .welcome-img {
+   align-self: center;
+   background-position: 0 0;
+   background-size: 454px 618px;
+   flex-basis: 454px;
+   height: 618px;
+   margin-left: -35px;
+   margin-right: -15px;
+ }
+
+ .form-div{
+   flex-grow: 1;
+   justify-content: center;
+   margin-top: 12px;
+   max-width: 350px;
+   align-items: stretch;
+   border: 0 solid #000;
+   display: flex;
+   flex-direction: column;
+   flex-shrink: 0;
+   margin: 0;
+   padding: 0;
+   position: relative;
+   font: inherit;
+   vertical-align: baseline;
+ }
+
+ .form-holder{
+   background-color: #fff;
+   border: 1px solid #e6e6e6;
+   border-radius: 1px;
+   margin: 0 0 10px;
+   padding: 10px 0;
+   align-items: stretch;
+   box-sizing: border-box;
+   box-sizing: border-box;
+   flex-shrink: 0;
+   position: relative;
+   font: inherit;
+   vertical-align: baseline;
+ }
+
+ .form-holder h1{
+    margin: 22px auto 8px;
+    background-position: 0 0;
+    height: 51px;
+    width: 175px;
+    display: block;
+    overflow: hidden;
+    text-indent: 110%;
+    white-space: nowrap;
+ }
+
+ .form-box{
+   margin-bottom: 10px;
+   align-items: stretch;
+   border: 0 solid #00;
+   display: flex;
+   flex-shrink: 0;
+   margin: 0;
+   padding: 0;
+   position: relative;
+   font: inherit;
+   vertical-align: baseline;
+ }
+
+ .form {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+ }
+
+ /*.form-div {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   margin-right: 500px
+ }
+
+ .form-div h1 {
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+ }
+
+ .form-wrapper{
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+ }
+
+ .form-wrapper form {
+   display: flex;
+   flex-direction: column;
+ }*/
