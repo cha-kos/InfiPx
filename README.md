@@ -21,15 +21,10 @@ InfiPx is a web application inspired by Instagram build using Ruby on Rails and 
 
 
 * [Wireframes](https://github.com/chrishakos/fullstack-InstaClone/tree/master/docs/Wireframes)
-* [React Components][components]
-* [Sample State][sample-state]
-* [DB schema][schema]
-* [API endpoints][api-endpoints]
-
-[components]: component-heirarchy.md
-[sample-state]: sample-state.md
-[api-endpoints]: api-endpoints.md
-[schema]: schema.md
+* [React Components](https://github.com/chrishakos/InfiPx/blob/master/docs/component-heirarchy.md)
+* [Sample State](https://github.com/chrishakos/InfiPx/blob/master/docs/sample-state.md)
+* [DB schema](https://github.com/chrishakos/InfiPx/blob/master/docs/schema.md)
+* [API endpoints](https://github.com/chrishakos/InfiPx/blob/master/docs/api-endpoints.md)
 
 
 ## Implementation Timeline
