@@ -80,6 +80,7 @@ body{
   }
 
   .form {
+  width: 270px;
    display: flex;
    flex-direction: column;
    margin: 0;
@@ -103,7 +104,7 @@ body{
     font-weight: lighter;
     font-size: 15px;
     padding: 6px;
-    width: 275px;
+    width: 256px;
 
     &:focus{
       outline: gray;
@@ -136,7 +137,7 @@ body{
 
 .button{
   font-size: 12px;
-  height: 23px;
+  height: 30px;
   cursor: pointer;
   background: #3897f0;
   border-color: #3897f0;
@@ -174,7 +175,7 @@ body{
 }
 
 .option-login{
- margin: 10px 40px 14px;
+ margin: 10px 40px 30px;
  display: block;
  position: relative;
  font: inherit;
@@ -193,7 +194,6 @@ body{
  overflow: hidden;
  text-overflow: ellipsis;
  white-space: nowrap;
- width: 100%;
  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
  display: inline-block;
  margin: 0em 0em 0em 0em;
@@ -235,8 +235,6 @@ body{
  background-color: #fff;
  border: 1px solid #e6e6e6;
  border-radius: 1px;
- margin: 0 0 10px;
- padding: 10px 0;
  align-items: stretch;
  box-sizing: border-box;
  display: flex;
@@ -245,11 +243,12 @@ body{
  font: inherit;
  vertical-align: baseline;
  color: #262626;
+ font-size: 14px;
 }
 
 .link-toggle-text{
  color: #262626;
- font-size: 14px;
+ font-size: 12px;
  margin: 15px;
  text-align: center;
  padding: 0;
