@@ -10,10 +10,12 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
  */
- .welcome {
+
+/*Components*/
+ @import "components/session_form.scss";
+ /*.welcome {
       flex-grow: 1;
       justify-content: center;
       margin: 30px auto 0;
@@ -24,9 +26,9 @@
       flex-shrink: 0;
       padding: 0;
       position: relative;
-  }
+  }*/
 
- .welcome-img {
+ /*.welcome-img {
      align-self: center;
      background-position: 0 0;
      background-size: 454px 618px;
@@ -73,13 +75,6 @@
      justify-content: center;
      font-family: 'Cookie', cursive;
      font-size: 45px
-      /*margin: 22px auto 8px;
-      /*height: 51px;
-      width: 175px;
-      display: block;
-      overflow: hidden;
-      text-indent: 110%;
-      white-space: nowrap;*/
    }
 
    .form-box{
@@ -110,7 +105,6 @@
      padding: 0px 0px 7px 0px;
      flex-direction: column;
      display: flex;
-     /*flex-shrink: 0;*/
      font: inherit;
      vertical-align: baseline;
    }
@@ -273,27 +267,4 @@
 .link-toggle-link{
   color: #3897f0;
   text-decoration: none;
-}
- /*.form-div {
-   display: flex;
-   flex-direction: column;
-   justify-content: flex-end;
-   margin-right: 500px
- }
-
- .form-div h1 {
-   display: flex;
-   align-items: center;
-   justify-content: flex-end;
- }
-
- .form-wrapper{
-   display: flex;
-   align-items: center;
-   justify-content: flex-end;
- }
-
- .form-wrapper form {
-   display: flex;
-   flex-direction: column;
- }*/
+}*/

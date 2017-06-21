@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {login, signup} from '../actions/session_actions';
+import {login, signup} from '../../actions/session_actions';
 import { Link }  from 'react-router-dom';
 
 
@@ -43,12 +43,14 @@ class SessionForm extends React.Component {
       return (
         <p>Don't have an account? <Link
         className ='link-toggle-link'
+        onClick={this.props.clearErrors}
         to="/signup">Sign Up</Link></p>
       );
     } else {
       return (
         <p>Have an account? <Link
         className='link-toggle-link'
+        onClick={this.props.clearErrors}
         to="/login">Log In</Link></p>
       );
     }
@@ -91,7 +93,8 @@ class SessionForm extends React.Component {
                 </div>
               <span className='option-login'>
                 <button className='option-login-button'>
-                  <span className='option-login-text'>Log in with Demo Account</span>
+                  <span className='option-login-text'><i className="fa fa-facebook-official fa-lg" aria-hidden="true">
+                  </i> Log in with Demo Account</span>
                 </button>
               </span>
               <div className='error-text'>{this.errorText()}</div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link }  from 'react-router-dom';
-import { logout } from '../actions/session_actions';
+import { logout } from '../../actions/session_actions';
 
 const Greeting = function({currentUser, logout}) {
   function greet() {
