@@ -60,17 +60,25 @@ class SessionForm extends React.Component {
          <h1>InfiPx</h1>
           <div className='form-box'>
             <form onSubmit={this.handleSubmit} className='form'>
+              <div className='username'>
                 <input onChange={this.update("username")}
                   value={this.state.username}
-                  placeholder='Username'/>
+                  placeholder='Username'
+                  className='input-field'/>
+                  <div className='username-dummy'/>
+               </div>
+               <div className='password'>
                 <input onChange={this.update("password")}
                   value={this.state.password}
                   type="password"
                   placeholder='Password'
-                  />
+                  className='input-field'/>
+                  <div className='password-dummy'/>
+               </div>
               {this.errorText()}
-              <button>{buttonText}</button>
-              {this.linkToggle()}
+              <span className='buttonspan'>
+                <button className='button'>{buttonText}</button>
+              </span>
             </form>
            </div>
           </div>
@@ -80,5 +88,6 @@ class SessionForm extends React.Component {
   }
 }
 
+// {this.linkToggle()}
 
 export default SessionForm;

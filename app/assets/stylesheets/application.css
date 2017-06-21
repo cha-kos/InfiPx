@@ -14,92 +14,146 @@
  *= require_self
  */
  .welcome {
-    flex-grow: 1;
-    justify-content: center;
-    margin: 30px auto 0;
-    max-width: 935px;
-    width: 100%;
-    align-items: stretch;
-    display: flex;
-    flex-shrink: 0;
-    padding: 0;
-    position: relative;
- }
+      flex-grow: 1;
+      justify-content: center;
+      margin: 30px auto 0;
+      max-width: 935px;
+      width: 100%;
+      align-items: stretch;
+      display: flex;
+      flex-shrink: 0;
+      padding: 0;
+      position: relative;
+  }
 
  .welcome-img {
-   align-self: center;
-   background-position: 0 0;
-   background-size: 454px 618px;
-   flex-basis: 454px;
-   height: 618px;
-   margin-left: -35px;
-   margin-right: -15px;
+     align-self: center;
+     background-position: 0 0;
+     background-size: 454px 618px;
+     flex-basis: 454px;
+     height: 618px;
+     margin-left: -35px;
+     margin-right: -15px;
  }
 
  .form-div{
-   flex-grow: 1;
-   justify-content: center;
-   margin-top: 12px;
-   max-width: 350px;
-   align-items: stretch;
-   border: 0 solid #000;
-   display: flex;
-   flex-direction: column;
-   flex-shrink: 0;
-   margin: 0;
-   padding: 0;
-   position: relative;
-   font: inherit;
-   vertical-align: baseline;
+     flex-grow: 1;
+     justify-content: center;
+     margin-top: 12px;
+     max-width: 350px;
+     align-items: stretch;
+     border: 0 solid #000;
+     display: flex;
+     flex-direction: column;
+     flex-shrink: 0;
+     margin: 0;
+     padding: 0;
+     position: relative;
+     font: inherit;
+     vertical-align: baseline;
+   }
+
+   .form-holder{
+     background-color: #fff;
+     border: 1px solid #e6e6e6;
+     border-radius: 1px;
+     margin: 0 0 10px;
+     padding: 10px 0;
+     align-items: stretch;
+     box-sizing: border-box;
+     box-sizing: border-box;
+     flex-shrink: 0;
+     position: relative;
+     font: inherit;
+     vertical-align: baseline;
+   }
+
+   .form-holder h1{
+     display: flex;
+     justify-content: center;
+     font-family: 'Cookie', cursive;
+     font-size: 45px
+      /*margin: 22px auto 8px;
+      /*height: 51px;
+      width: 175px;
+      display: block;
+      overflow: hidden;
+      text-indent: 110%;
+      white-space: nowrap;*/
+   }
+
+   .form-box{
+     margin-bottom: 10px;
+     align-items: stretch;
+     border: 0 solid #00;
+     display: flex;
+     flex-shrink: 0;
+     margin: 0;
+     padding: 0;
+     position: relative;
+     font: inherit;
+     vertical-align: baseline;
+     justify-content: center
+   }
+
+   .form {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+   }
+
+   .username{
+     padding: 0px 0px 7px 0px;
+     flex-direction: column;
+     display: flex;
+     /*flex-shrink: 0;*/
+     font: inherit;
+     vertical-align: baseline;
+   }
+
+   .input-field{
+     font-weight: lighter;
+     font-size: 15px;
+     padding: 6px;
+     width: 258px;
+   }
+
+
+   .password {
+    padding: 0px 0px 13px 0px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    font: inherit;
+    vertical-align: baseline;
  }
 
- .form-holder{
-   background-color: #fff;
-   border: 1px solid #e6e6e6;
-   border-radius: 1px;
-   margin: 0 0 10px;
-   padding: 10px 0;
-   align-items: stretch;
-   box-sizing: border-box;
-   box-sizing: border-box;
-   flex-shrink: 0;
-   position: relative;
-   font: inherit;
-   vertical-align: baseline;
- }
 
- .form-holder h1{
-    margin: 22px auto 8px;
-    background-position: 0 0;
-    height: 51px;
-    width: 175px;
+ .button-span{
+    margin: 4px 40px 14px;
     display: block;
-    overflow: hidden;
-    text-indent: 110%;
-    white-space: nowrap;
+    position: relative;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
  }
 
- .form-box{
-   margin-bottom: 10px;
-   align-items: stretch;
-   border: 0 solid #00;
-   display: flex;
-   flex-shrink: 0;
-   margin: 0;
-   padding: 0;
-   position: relative;
-   font: inherit;
-   vertical-align: baseline;
- }
-
- .form {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  vertical-align: baseline;
+ .button{
+   font-size: 12px;
+   height: 23px;
+   cursor: pointer;
+   background: #3897f0;
+   border-color: #3897f0;
+   color: #fff;
+   border-radius: 3px;
+   border-style: solid;
+   border-width: 1px;
+   width: 100%;
  }
 
  /*.form-div {
