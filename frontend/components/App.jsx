@@ -3,6 +3,7 @@ import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session/session_form_container';
 import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import Footer from './footer/footer';
 
 const App = () => (
   <div>
@@ -11,6 +12,7 @@ const App = () => (
       <ProtectedRoute exact path='/' component={GreetingContainer}/>
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
+      <Footer/>
   </div>
 );
 

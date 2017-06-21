@@ -4,7 +4,7 @@ import { logout } from '../../actions/session_actions';
 
 const Greeting = function({currentUser, logout}) {
   function greet() {
-    return `Welcome ${currentUser ? `, ${currentUser.username}` : '' }!`;
+    return `What does it! ${currentUser ? `, ${currentUser.username}` : '' }!`;
   }
 
   const thingsToShow = () => {

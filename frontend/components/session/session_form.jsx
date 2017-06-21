@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {login, signup} from '../../actions/session_actions';
 import { Link }  from 'react-router-dom';
+import Footer from '../footer/footer';
 
 
 class SessionForm extends React.Component {
@@ -9,8 +10,7 @@ class SessionForm extends React.Component {
     super(props);
     this.state =  {
       username: '',
-      password: '',
-      errors: ''
+      password: ''
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,11 +29,14 @@ class SessionForm extends React.Component {
   }
 
   errorText () {
-    if (this.props.errors){
+    if (this.props.errors.length !== 0){
       return (
-        <ul>{this.props.errors.map(error => {
-        return (<li>{error}</li>);
-      })}</ul>
+        <div className='error-text'>
+          <ul>{this.props.errors.map(error => {
+            return (<li>{error}</li>);
+            })}
+          </ul>
+        </div>
       );
     }
   }
@@ -97,7 +100,7 @@ class SessionForm extends React.Component {
                   </i> Log in with Demo Account</span>
                 </button>
               </span>
-              <div className='error-text'>{this.errorText()}</div>
+              {this.errorText()}
             </form>
            </div>
           </div>

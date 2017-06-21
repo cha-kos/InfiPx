@@ -1,3 +1,8 @@
+body{
+  margin: 0;
+  background-color: #fafafa;
+}
+
 .welcome {
      flex-grow: 1;
      justify-content: center;
@@ -54,6 +59,7 @@
   }
 
   .form-holder h1{
+    margin-bottom: 15px;
     display: flex;
     justify-content: center;
     font-family: 'Cookie', cursive;
@@ -63,7 +69,6 @@
   .form-box{
     margin-bottom: 10px;
     align-items: stretch;
-    border: 0 solid #00;
     display: flex;
     flex-shrink: 0;
     margin: 0;
@@ -93,11 +98,19 @@
   }
 
   .input-field{
+    border-radius: 3px;
+    border: 1px solid lightgray;
     font-weight: lighter;
     font-size: 15px;
     padding: 6px;
-    width: 258px;
+    width: 275px;
+
+    &:focus{
+      outline: gray;
+      border-color: gray;
+    }
   }
+
 
 
   .password {
