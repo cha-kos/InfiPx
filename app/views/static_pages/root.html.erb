@@ -5,8 +5,12 @@
       user: current_user
     ).html_safe %>
   <% end %>
-</script>
 
+  window.images = {
+    welcome: "<%= image_path('welcome.png')%>"
+  }
+
+</script>
 
 
 <main id="root">

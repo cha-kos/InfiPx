@@ -64,7 +64,7 @@ class SessionForm extends React.Component {
    return (
      <article className="welcome">
       <div className="welcome-img">
-       <img src='assets/welcome.png'/>
+       <img src={window.images.welcome}/>
       </div>
       <div className='form-div'>
        <div className="form-holder">
