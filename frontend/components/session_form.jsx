@@ -31,7 +31,9 @@ class SessionForm extends React.Component {
   errorText () {
     if (this.props.errors){
       return (
-        <ul>{this.props.errors}</ul>
+        <ul>{this.props.errors.map(error => {
+        return (<li>{error}</li>);
+      })}</ul>
       );
     }
   }
@@ -39,11 +41,15 @@ class SessionForm extends React.Component {
   linkToggle () {
     if (this.props.formType === 'login'){
       return (
-        <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
+        <p>Don't have an account? <Link
+        className ='link-toggle-link'
+        to="/signup">Sign Up</Link></p>
       );
     } else {
       return (
-        <p>Have an account? <Link to="/login">Log In</Link></p>
+        <p>Have an account? <Link
+        className='link-toggle-link'
+        to="/login">Log In</Link></p>
       );
     }
   }
@@ -61,26 +67,39 @@ class SessionForm extends React.Component {
           <div className='form-box'>
             <form onSubmit={this.handleSubmit} className='form'>
               <div className='username'>
-                <input onChange={this.update("username")}
+                <input className='input-field'
+                  onChange={this.update("username")}
                   value={this.state.username}
-                  placeholder='Username'
-                  className='input-field'/>
+                  placeholder='Username'/>
                   <div className='username-dummy'/>
                </div>
                <div className='password'>
-                <input onChange={this.update("password")}
+                <input className='input-field'
+                  onChange={this.update("password")}
                   value={this.state.password}
                   type="password"
-                  placeholder='Password'
-                  className='input-field'/>
+                  placeholder='Password'/>
                   <div className='password-dummy'/>
                </div>
-              {this.errorText()}
               <span className='buttonspan'>
                 <button className='button'>{buttonText}</button>
               </span>
+                <div className='or-div'>
+                  <div className='or-line'/>
+                  <div className='or-text'>or</div>
+                  <div className='or-line'/>
+                </div>
+              <span className='option-login'>
+                <button className='option-login-button'>
+                  <span className='option-login-text'>Log in with Demo Account</span>
+                </button>
+              </span>
+              <div className='error-text'>{this.errorText()}</div>
             </form>
            </div>
+          </div>
+          <div className='link-toggle-div'>
+            <div className='link-toggle-text'>{this.linkToggle()}</div>
           </div>
         </div>
       </article>
@@ -88,6 +107,6 @@ class SessionForm extends React.Component {
   }
 }
 
-// {this.linkToggle()}
+
 
 export default SessionForm;

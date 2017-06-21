@@ -133,6 +133,7 @@
  }
 
 
+
  .button-span{
     margin: 4px 40px 14px;
     display: block;
@@ -156,6 +157,123 @@
    width: 100%;
  }
 
+ .or-div{
+   display: inline-flex;
+   margin: 20px 0px 0px;
+   align-items: stretch;
+   font: inherit;
+ }
+
+ .or-line{
+   width: 100%;
+   margin: 7px 0;
+   background-color: #c7c7c7;
+   height: 1px;
+ }
+
+.or-text{
+  color: #999;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 15px;
+  margin: 0 8px;
+  text-transform: uppercase;
+  flex-direction: column;
+  font: inherit;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+.option-login{
+  margin: 10px 40px 14px;
+  display: block;
+  position: relative;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+.option-login-button{
+  padding: 0 8px;
+  cursor: pointer;
+  background: 0 0;
+  border: none;
+  color: #003569;
+  font-weight: 400;
+  line-height: 26px;
+  outline: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  display: inline-block;
+  margin: 0em 0em 0em 0em;
+  font: 14px system-ui;
+}
+
+.option-login-text{
+  color: #385185;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.error-text{
+  color: #ed4956;
+  margin: 10px 40px;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: red;
+  font-size: 14px
+}
+
+.error-text ul{
+  padding: 0px 0px 0px 15px;
+  max-width: 180px;
+  list-style-type: none;
+}
+
+.link-toggle-div{
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 1px;
+  margin: 0 0 10px;
+  padding: 10px 0;
+  align-items: stretch;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font: inherit;
+  vertical-align: baseline
+  color: #262626;
+}
+
+.link-toggle-text{
+  color: #262626;
+  font-size: 14px;
+  margin: 15px;
+  text-align: center;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  display: block;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+.link-toggle-link{
+  color: #3897f0;
+  text-decoration: none;
+}
  /*.form-div {
    display: flex;
    flex-direction: column;
