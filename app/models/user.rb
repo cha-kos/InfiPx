@@ -10,7 +10,7 @@ class User < ApplicationRecord
   belongs_to :followee
   has_many :comments
 
-  has_attached_file :avatar, default_url: "empty_avatar.png"
+  has_attached_file :avatar, default_url: "mr_T.jpg"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
 
