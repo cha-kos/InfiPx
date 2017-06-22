@@ -21,3 +21,10 @@ export const logout = () => {
     url: '/api/session'
   });
 };
+
+export const getUser = ( {user} ) => {
+  return $.ajax({
+    method: 'GET',
+    url: `/api/users/${user.id}`
+  })
+}

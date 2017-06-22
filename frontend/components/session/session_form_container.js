@@ -5,7 +5,13 @@ import { login, signup, clearErrors } from '../../actions/session_actions';
 
 const mapStateToProps = function (state, ownProps) {
   const formType = ownProps.location.pathname.slice(1);
-  const errors = state.session.errors.responseJSON ? state.session.errors.responseJSON : [];
+  // debugger
+  let errors;
+   if (state.session.errors.responseJSON)  {
+    errors = (state.session.errors.responseJSON);
+   } else {
+      errors = [];
+    }
   return {
     loggedIn: Boolean(state.session.currentUser),
     errors: errors,

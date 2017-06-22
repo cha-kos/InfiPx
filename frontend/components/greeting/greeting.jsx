@@ -31,6 +31,7 @@ const Greeting = function({currentUser, logout}) {
     <header className="my-header">
       <Link to="/feed">{greet()}</Link>
       <Link to="/">InfiPx</Link>
+      <img src={currentUser.avatar_url}/>
       {thingsToShow()}
     </header>
   );
