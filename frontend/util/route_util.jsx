@@ -4,24 +4,25 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const Auth = ({component: Component, path, loggedIn}) => {
-  return (<Route path={path} render={(props) => (
+  return (<Route exact path={path} render={(props) => {
+    return(
     !loggedIn ? (
       <Component {...props}/>
     ) : (
       <Redirect to="/" />
-    )
-  )}/>)
+    ))
+  }}/>)
 };
 
-const Protected= ({component: Component, path, loggedIn}) => {
-  return (<Route path={path} render={(props) => (
-    loggedIn ? (
+const Protected = ({component: Component, path, loggedIn}) => {
+  return (<Route exact path={path} render={(props) => {
+    return (loggedIn ? (
       <Component {...props}/>
     ) : (
       <Redirect to="/login" />
-    )
-  )}/>)
-};({ })
+    ))
+  }}/>)
+};
 
 const mapStateToProps = state => {
   return {loggedIn: Boolean(state.session.currentUser)};

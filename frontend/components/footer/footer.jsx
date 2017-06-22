@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Footer extends React.Component {
   render() {
@@ -7,9 +8,9 @@ class Footer extends React.Component {
         <div className='footer-div'>
           <nav className='footer-nav'>
             <ul className='footer-ul'>
-              <li><a href="">Portfolio</a></li>
-              <li><a href="">Github</a></li>
-              <li><a href="">Contact</a></li>
+              <li><Link to='/' >Portfolio</Link></li>
+              <li><Link to='/' >Github</Link></li>
+              <li><Link to='/' >Contact</Link></li>
             </ul>
             <span className="footer-span">© 2017 InfiPx</span>
           </nav>

@@ -9,9 +9,9 @@ const App = () => (
   <div>
     <header>
     </header>
-      <ProtectedRoute exact path='/' component={GreetingContainer}/>
-      <AuthRoute path="/login" component={SessionFormContainer} />
-      <AuthRoute path="/signup" component={SessionFormContainer} />
+        <ProtectedRoute path='/' component={GreetingContainer}/>
+        <AuthRoute path="/login" component={SessionFormContainer} />
+        <AuthRoute path="/signup" component={SessionFormContainer} />
       <Footer/>
   </div>
 );
