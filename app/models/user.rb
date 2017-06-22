@@ -4,6 +4,13 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_many :likes
+  has_many :photos
+  has_many :followers
+  belongs_to :followee
+  has_many :comments
+
+
   attr_accessor :password
 
   def password=(pw)
