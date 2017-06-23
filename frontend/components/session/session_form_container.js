@@ -5,7 +5,6 @@ import { login, signup, clearErrors } from '../../actions/session_actions';
 
 const mapStateToProps = function (state, ownProps) {
   const formType = ownProps.location.pathname.slice(1);
-  // debugger
   let errors;
    if (state.session.errors.responseJSON)  {
     errors = (state.session.errors.responseJSON);
