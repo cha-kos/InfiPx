@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
 
   def show
-    @user = User.find(params[:id])
+    @user = User.includes(:photos).find(params[:id])
   end
 
   def create

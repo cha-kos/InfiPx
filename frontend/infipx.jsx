@@ -2,6 +2,9 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import Root from './components/root';
 import configureStore from './store/store';
+import { requestPhoto, removePhoto } from './actions/photo_actions';
+
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,6 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
+  window.dispatch = store.dispatch;
+  window.requestPhoto = requestPhoto;
+  window.removePhoto = removePhoto;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);
 });

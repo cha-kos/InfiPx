@@ -20,7 +20,6 @@ export const addPhoto = () => {
   });
 };
 
-
 export const updatePhoto = (id) => {
   return $.ajax({
     method: 'PATCH',
@@ -31,6 +30,6 @@ export const updatePhoto = (id) => {
 export const deletePhoto = (id) => {
   return $.ajax({
     method: 'DELETE',
-    url: `api/posts/${id}`
+    url: `api/photos/${id}`
   });
 };

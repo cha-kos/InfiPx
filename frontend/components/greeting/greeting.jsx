@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link }  from 'react-router-dom';
 import { logout } from '../../actions/session_actions';
+import PhotoIndex from '../photo/photo_index_container';
 
 const Greeting = function({currentUser, logout}) {
   function greet() {
@@ -28,12 +29,15 @@ const Greeting = function({currentUser, logout}) {
   };
 
   return (
+    <div>
     <header className="my-header">
       <Link to="/feed">{greet()}</Link>
       <Link to="/">InfiPx</Link>
       <img src={currentUser.avatar_url}/>
       {thingsToShow()}
     </header>
+    <PhotoIndex />
+    </div>
   );
 };
 

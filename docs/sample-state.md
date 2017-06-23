@@ -9,7 +9,7 @@
       username: 'cashmerechris'
     }
   },
-  user: {
+  currentUser: {
     id: 1,
     username: 'cashmerechris',
     avatarURL: "chris.png",
@@ -49,7 +49,47 @@
         }
     }
   },
-  photoDetail: {
+  user: {
+    id: 1,
+    username: 'differentguy',
+    avatarURL: "chris.png",
+    name: 'Chris Hakos',
+    bio: 'Some shit',
+    photos: [1, ...],
+    likes: [1, ...],
+    comments: [1, ...]
+    followingCount: 2
+    following: {
+        2: {
+          id: 2,
+          username: 'samir',
+          avatar: 'samir.png',
+          followsCurrentUser: true,
+        },
+        3: {
+          id: 3,
+          username: 'larrydavid'
+          avatar: 'larry.png'
+          followsCurrentUser: false
+        }
+    }
+    followersCount: 2
+    followers: {
+        2: {
+          id: 2,
+          username: 'samir',
+          avatar: 'samir.png',
+          currentUserfollows: true
+        },
+        4: {
+          id: 4,
+          username: 'henry',
+          avatar: 'henry.png',
+          currentUserfollows: false
+        }
+    }
+  },
+  photo: {
     id: 1,
     userID: 1,
     photoUrl: 'by_the_beach.png',

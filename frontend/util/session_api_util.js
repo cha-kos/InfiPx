@@ -22,9 +22,9 @@ export const logout = () => {
   });
 };
 
-export const getUser = ( {user} ) => {
+export const getUser = ( id ) => {
   return $.ajax({
     method: 'GET',
-    url: `/api/users/${user.id}`
+    url: `/api/users/${id}`
   })
 }

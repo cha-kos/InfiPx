@@ -1,7 +1,6 @@
 import * as APIUtil from '../util/photo_api_util';
+export const RECEIVE_ALL_PHOTOS = 'RECEIVE_ALL_PHOTOS';
 export const RECEIVE_PHOTO = 'RECEIVE_PHOTO';
-export const CREATE_PHOTO = 'CREATE_PHOTO';
-export const UPDATE_PHOTO = 'UPDATE_PHOTO';
 export const DELETE_PHOTO = 'DELETE_PHOTO';
 
 
@@ -17,24 +16,33 @@ export const requestPhoto = (id) => (dispatch) => {
   ));
 };
 
+export const removePhoto = (id) => (dispatch) => {
+  return (APIUtil.deletePhoto(id)
+  .then(photo => dispatch(deletePhoto(photo))));
+};
+
 export const uploadPhoto = (photo) => (dispatch) => {
   return (APIUtil.addPhoto(photo)
+    .then(photo => dispatch(receivePhoto(photo))));
+};
+
+export const updatePhoto = (photo) => (dispatch) => {
+  return (APIUtil.updatePhoto(id)
     .then(photo => dispatch(receivePhoto(photo))));
 };
 
 
 export const receiveAllPhotos = (photos) => {
   return ({
-    type: CREATE_PHOTO,
+    type: RECEIVE_ALL_PHOTOS,
     photos,
   });
 };
 
-
 export const receivePhoto = (photo) => {
   return ({
     type: RECEIVE_PHOTO,
-    photo: {photo}
+    photo: photo
   });
 };
 

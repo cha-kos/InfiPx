@@ -1,4 +1,4 @@
-json.caption @photo.caption
 json.id @photo.id
-json.image image_path(@photo.image.url)
 json.user_id @photo.user_id
+json.caption @photo.caption
+json.image_url image_path(@photo.image.url)
