@@ -1,8 +1,8 @@
 class Photo < ActiveRecord::Base
   validates :user_id, :image, presence: true
-  
+
   belongs_to :user
-  # has_many :likes
+  has_many :likes
   has_many :comments
 
   has_attached_file :image, default_url: "/images/:style/missing.png"
