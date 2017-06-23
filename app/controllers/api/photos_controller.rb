@@ -5,16 +5,43 @@ class Api::PhotosController < ApplicationController
   end
 
   def show
-    @photo = Photo.find_by(params[:id])
+    @photo = Photo.find(params[:id])
   end
 
-  def new
+  def create
     @photo = Photo.new(photo_params)
+
+    if @photo.save
+      render :show
+    else
+      render json: @photo.errors.full_messages, status: 422
+    end
   end
 
+  def update
+    @photo = Photo.find(params[:id])
+
+    if @photo.update(photo_params)
+      render :show
+    else
+      render json: @photo.errors.full_messages, status: 422
+    end
+  end
+
+  def destroy
+    @photo = Photo.find(params[:id])
+
+    if @photo.destroy
+      render :show
+    else
+      render json: @photo.errors.full_messages, status: 422
+    end
+  end
 
   private
+
   def photo_params
     params.require(:photo).permit(:user_id, :caption)
+  end
 
 end
