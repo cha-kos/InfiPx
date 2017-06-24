@@ -23,7 +23,7 @@ class User extends React.Component {
 
 
   render () {
-    debugger
+    
     if (!this.props.user) {
       return (<h3>...loading</h3>);
       }

@@ -2,7 +2,7 @@
 //
 //
 // export const selectAllPosts = ({posts}) => {
-//    debugger
+//    
 //    return (values(posts))
 //  };
 
