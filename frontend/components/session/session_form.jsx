@@ -61,7 +61,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
-  const buttonText = this.props.formType === 'login' ? 'Log In' : 'Sign Up';
+  const buttonText = this.props.formType === 'login' ? 'Log in' : 'Sign up';
    return (
      <article className="welcome">
       <div className="welcome-img">

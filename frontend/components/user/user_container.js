@@ -5,10 +5,10 @@ import { getUser } from '../../actions/user_actions';
 // import { selectAllPhotos } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
   return({
     currentUser: state.session.currentUser,
     user: state.user,
+    photos: state.photo,
 
   });
 };

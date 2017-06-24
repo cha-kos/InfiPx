@@ -12,14 +12,30 @@ class User extends React.Component {
      this.props.getUser(nextProps.match.params.id);
    }
   }
-  render () {
 
+  // userPhotos () {
+  //   let photos = this.props.photos.map (photo => {
+  //     if (photo.user_id === this.props.user.id){
+  //       return (<li><img src={photo.image_url}/></li>);
+  //     }
+  //   });
+  // }
+
+
+  render () {
+    debugger
     if (!this.props.user) {
       return (<h3>...loading</h3>);
       }
 
-    return (<p>{this.props.user.username}</p>);
+    return (
+      <div>
+      <p>{this.props.user.username}</p>
+      </div>
+    );
   }
 }
 
 export default User;
+
+// <ul>{this.userPhotos()}</ul>

@@ -6,7 +6,8 @@ import { selectAllPhotos } from '../../reducers/selectors';
 
 const mapStateToProps = (state) => {
   return({
-    photos: selectAllPhotos(state.photo)
+    photos: selectAllPhotos(state.photo),
+    currentUser: state.session.currentUser,
   });
 };
 

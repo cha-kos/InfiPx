@@ -100,16 +100,20 @@ body{
 
   .input-field{
     border-radius: 3px;
-    border: 1px solid lightgray;
+    border: 1px solid #efefef;
     font-weight: lighter;
-    font-size: 15px;
-    padding: 6px;
-    width: 256px;
+    font-size: 14px;
+    padding: 9px 8px 7px 8px;
+    width: 252px;
 
     &:focus{
-      outline: gray;
-      border-color: gray;
+      outline: none;
+      border-color: #b3b3b3;
     }
+  }
+
+  .input-field::placeholder{
+    color: #a6a6a6;
   }
 
 
@@ -136,7 +140,8 @@ body{
 }
 
 .button{
-  font-size: 12px;
+  font-weight: bold;
+  font-size: 14px;
   height: 30px;
   cursor: pointer;
   background: #3897f0;
