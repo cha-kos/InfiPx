@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   validates :username, :session_token, presence: true
+  validates :username, uniqueness: true
   validates :password, length: {minimum: 6, allow_nil: true}
 
   after_initialize :ensure_session_token
@@ -45,5 +46,16 @@ class User < ApplicationRecord
     BCrypt::Password.new(self.password_digest).is_password?(password)
   end
 
+
+  # def photo_likes_hash
+  #   zipped_likes = likes.pluck(:photo_id).zip(likes)
+  #   likes_hash = {}
+  #
+  #   zipped_likes.each do |(id, like)|
+  #     likes_hash[id] = like
+  #   end
+  #
+  #   likes_hash
+  # end
 
 end

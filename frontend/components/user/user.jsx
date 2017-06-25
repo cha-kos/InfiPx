@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from '../header/header_container';
 
 
 class User extends React.Component {
@@ -23,14 +24,15 @@ class User extends React.Component {
 
 
   render () {
-    
+
     if (!this.props.user) {
       return (<h3>...loading</h3>);
       }
 
     return (
-      <div>
-      <p>{this.props.user.username}</p>
+      <div className='user-div'>
+        <Header/>
+        <p>{this.props.user.username}</p>
       </div>
     );
   }
