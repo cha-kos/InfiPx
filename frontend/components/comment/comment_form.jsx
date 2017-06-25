@@ -9,7 +9,8 @@ class CommentForm extends React.Component {
     this.state = {
       body: this.props.body,
       user_id: this.props.userId,
-      photo_id: this.props.photoId
+      photo_id: this.props.photoId,
+      username: this.props.username
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -33,13 +34,13 @@ class CommentForm extends React.Component {
           <div className='body'>
             <input
               className="form-body"
-              placeHolder='Add Comment'
+              placeholder='Add Comment'
               type="text"
               value={this.state.body}
               onChange={this.update("body")}/>
           </div>
-          <div className="button">
-            <button id="button">Submit</button>
+          <div>
+            <button>Submit</button>
           </div>
         </form>
       </section>
