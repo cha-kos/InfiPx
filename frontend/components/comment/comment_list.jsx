@@ -7,7 +7,19 @@ class CommentList extends React.Component {
     super(props);
 
     this.handleClick = this.handleClick.bind(this);
+    this.deleteButton = this.deleteButton.bind(this);
   }
+
+  deleteButton(){
+
+    if (this.props.currentUser.id === this.props.comment.user_id){
+      return(<button onClick={this.handleClick}>Delete Comment</button>);
+    } else if (this.props.currentUser.id === this.props.photoAuthorId){
+      return(<button onClick={this.handleClick}>Delete Comment</button>);
+    }
+  }
+
+
 
   handleClick(e) {
 
@@ -17,7 +29,7 @@ class CommentList extends React.Component {
   render() {
         return(
           <li>{this.props.comment.username}: {this.props.comment.body}
-            <button onClick={this.handleClick}>Delete Comment</button>
+            {this.deleteButton()}
           </li>
         );
   }

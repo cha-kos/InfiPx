@@ -24,7 +24,7 @@ class PhotoIndex extends React.Component{
       <ul>
       {photo.comments.map(comment => {
         return(
-          <CommentList photoId={photo.id} com={comment} />
+          <CommentList photoId={photo.id} com={comment} photoAuthorId={photo.user_id}/>
         );
       })}
       </ul>

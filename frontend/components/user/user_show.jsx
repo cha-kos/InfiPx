@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../header/header_container';
+import FollowButton from '../follow/follow_button_container';
 
 
 class User extends React.Component {
@@ -30,9 +31,11 @@ class User extends React.Component {
       }
 
     return (
-      <div className='user-div'>
+      <div className='user-show-div'>
         <Header/>
+        <img src={this.props.user.avatar_url} />
         <p>{this.props.user.username}</p>
+        <FollowButton />
       </div>
     );
   }

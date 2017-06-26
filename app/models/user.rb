@@ -7,9 +7,18 @@ class User < ApplicationRecord
 
   has_many :likes
   has_many :photos
-  has_many :followers
-  belongs_to :followee
   has_many :comments
+
+  has_many :followers,
+  class_name: :Follow,
+  foreign_key: :followee_id,
+  primary_key: :id
+
+  has_many :followings,
+  class_name: :Follow,
+  foreign_key: :follower_id,
+  primary_key: :id
+
 
   has_attached_file :avatar, default_url: "mr_T.jpg"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
@@ -45,6 +54,28 @@ class User < ApplicationRecord
   def password_is? (password)
     BCrypt::Password.new(self.password_digest).is_password?(password)
   end
+
+
+  def current_user_follows(current_user)
+    # debugger
+    follows = false
+    self.followers.each do |follow|
+      if (follow.follower_id == current_user.id)
+        follows = true
+      end
+    end
+    return follows
+ end
+
+ def current_user_follow_id(current_user)
+   id = nil
+   self.followers.each do |follow|
+     if (follow.follower_id == current_user.id)
+       id = follow.id
+     end
+   end
+     return id
+ end
 
 
   # def photo_likes_hash

@@ -6,9 +6,11 @@ const mapStateToProps = (state, ownProps) => {
   // debugger
 
   return({
+    currentUser: state.session.currentUser,
     body: '',
     photoId: ownProps.photoId,
-    comment: ownProps.com
+    comment: ownProps.com,
+    photoAuthorId: ownProps.photoAuthorId
   });
 };
 

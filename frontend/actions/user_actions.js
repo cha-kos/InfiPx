@@ -6,6 +6,16 @@ export const getUser = (id) => (dispatch) => {
     (user)=> dispatch(receiveUser(user)));
 };
 
+export const createFollow = (follow) => (dispatch) => {
+  return APIUtil.addFollow(follow).then(
+    (user) => dispatch(receiveUser(user)));
+};
+
+export const deleteFollow = (follow) => (dispatch) => {
+  return APIUtil.deleteFollow(follow).then(
+    (user) => dispatch(receiveUser(user)));
+};
+
 export const receiveUser = (user) => {
   return {
     type: RECEIVE_USER,

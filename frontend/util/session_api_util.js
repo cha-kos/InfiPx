@@ -28,3 +28,19 @@ export const getUser = ( id ) => {
     url: `/api/users/${id}`
   })
 }
+
+export const addFollow = ( follow ) => {
+  return $.ajax({
+    method: 'POST',
+    url: `api/follows`,
+    data: {follow: follow}
+  });
+};
+
+export const deleteFollow = ( follow ) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `api/follows/${follow.id}`,
+    data: {follow: follow}
+  });
+};

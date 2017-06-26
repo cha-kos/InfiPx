@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import User from './user';
+import User from './user_show';
 import { getUser } from '../../actions/user_actions';
 // import { selectAllPhotos } from '../../reducers/selectors';
 
@@ -9,7 +9,6 @@ const mapStateToProps = (state, ownProps) => {
     currentUser: state.session.currentUser,
     user: state.user,
     photos: state.photo,
-
   });
 };
 
