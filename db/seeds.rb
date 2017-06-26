@@ -10,8 +10,8 @@ User.destroy_all
 
 u1 = User.create({ username: "charles", password: "charles" })
 u2 =User.create({ username: "raymond", password: "charles" })
-u3 =User.create({ username: "donald", password: "charles" })
-u4 =User.create({ username: "frances", password: "charles" })
+u3 =User.create({ username: "vinny", password: "charles" })
+u4 =User.create({ username: "franky", password: "charles" })
 
 Photo.destroy_all
 
@@ -34,5 +34,5 @@ l1 = Like.create({user_id: u2.id, photo_id: p1.id})
 l2 = Like.create({user_id: u4.id, photo_id: p3.id})
 l3 = Like.create({user_id: u3.id, photo_id: p4.id})
 l4 = Like.create({user_id: u1.id, photo_id: p2.id})
-l5 = Like.create({user_id: u2.id, photo_id: p1.id})
+l5 = Like.create({user_id: u3.id, photo_id: p1.id})
 l6 = Like.create({user_id: u4.id, photo_id: p1.id})
