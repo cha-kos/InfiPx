@@ -13,10 +13,10 @@ User.create({ username: "donald", password: "charles" })
 User.create({ username: "frances", password: "charles" })
 
 
-Photo.create({user_id: 1, caption: 'dis be me', image: File.open('app/assets/images/mr_T.jpg')})
-Photo.create({user_id: 2, caption: 'dis be me', image: File.open('app/assets/images/mr_T.jpg')})
-Photo.create({user_id: 3, caption: 'dis be me', image: File.open('app/assets/images/mr_T.jpg')})
-Photo.create({user_id: 4, caption: 'dis be me', image: File.open('app/assets/images/mr_T.jpg')})
+Photo.create({user_id: 1, caption: 'dis be me', image: 'https://s3.us-east-2.amazonaws.com/infipx-dev/photos/images/000/000/012/original/mr_T.jpg'})
+Photo.create({user_id: 2, caption: 'dis be me', image: 'https://s3.us-east-2.amazonaws.com/infipx-dev/photos/images/000/000/012/original/mr_T.jpg'})
+Photo.create({user_id: 3, caption: 'dis be me', image: 'https://s3.us-east-2.amazonaws.com/infipx-dev/photos/images/000/000/012/original/mr_T.jpg'})
+Photo.create({user_id: 4, caption: 'dis be me', image: 'https://s3.us-east-2.amazonaws.com/infipx-dev/photos/images/000/000/012/original/mr_T.jpg'})
 
 Comment.create({user_id: 2, photo_id: 1, body: 'ayyy is u doe', username: User.find(2).username })
 Comment.create({user_id: 1, photo_id: 2, body: 'ayyy is u doe', username: User.find(1).username })
