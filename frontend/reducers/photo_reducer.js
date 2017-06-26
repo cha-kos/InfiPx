@@ -3,7 +3,8 @@ import { RECEIVE_USER } from '../actions/user_actions';
 import {
   RECEIVE_ALL_PHOTOS,
   RECEIVE_PHOTO,
-  REMOVE_PHOTO
+  REMOVE_PHOTO,
+  REMOVE_COMMENT
 } from '../actions/photo_actions';
 
 // const defaultState = {
@@ -25,7 +26,10 @@ const photoReducer = (state = {}, action) => {
       return newState;
     case RECEIVE_USER:
     photo = merge({}, state, action.user.photos);
-    return photo
+    return photo;
+    case REMOVE_COMMENT:
+    Object.assign(state[action.photo.id], action.photo);
+    return state;
     default:
       return state;
   }

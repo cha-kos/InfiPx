@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
-import { createComment } from '../../actions/photo_actions';
+
 
 class CommentForm extends React.Component {
 
@@ -17,6 +17,7 @@ class CommentForm extends React.Component {
   }
 
   handleSubmit(e) {
+
     e.preventDefault();
     this.props.createComment(this.state).then(() => this.setState({
       body: ''

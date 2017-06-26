@@ -2,6 +2,7 @@ import * as APIUtil from '../util/photo_api_util';
 export const RECEIVE_ALL_PHOTOS = 'RECEIVE_ALL_PHOTOS';
 export const RECEIVE_PHOTO = 'RECEIVE_PHOTO';
 export const DELETE_PHOTO = 'DELETE_PHOTO';
+export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 
 
 export const requestAllPhotos = () => (dispatch) => {
@@ -32,13 +33,23 @@ export const updatePhoto = (id) => (dispatch) => {
 };
 
 export const createComment = (comment) => (dispatch) => {
-  
   return (APIUtil.addComment(comment)
     .then(photo => dispatch(receivePhoto(photo))));
 };
 
 export const deleteComment = (id) => (dispatch) => {
   return (APIUtil.deleteComment(id)
+    .then(photo => dispatch(removeComment(photo)))
+    .then(({photo}) => dispatch(receivePhoto(photo))));
+};
+
+export const createLike = (like) => (dispatch) => {
+  return (APIUtil.addLike(like)
+    .then(photo => dispatch(receivePhoto(photo))));
+};
+
+export const deleteLike = (id) => (dispatch) => {
+  return (APIUtil.deleteLike(id)
     .then(photo => dispatch(receivePhoto(photo))));
 };
 
@@ -46,6 +57,13 @@ export const receiveAllPhotos = (photos) => {
   return ({
     type: RECEIVE_ALL_PHOTOS,
     photos,
+  });
+};
+
+export const removeComment = (photo) => {
+  return ({
+    type: REMOVE_COMMENT,
+    photo,
   });
 };
 

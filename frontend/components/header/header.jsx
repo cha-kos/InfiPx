@@ -28,8 +28,8 @@ const Header = function({currentUser, logout}) {
       );
     }
   };
-  const userPath = `users/${currentUser.id}`;
-  // debugger
+  const userPath = `/users/${currentUser.id}`;
+
   return (
     <div>
     <div className='header'>

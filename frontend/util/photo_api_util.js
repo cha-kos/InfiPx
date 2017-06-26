@@ -34,18 +34,20 @@ export const deletePhoto = (id) => {
   });
 };
 
-export const addLike = ( {photo} ) => {
+export const addLike = ( like ) => {
   return $.ajax({
     method: 'POST',
     url: `api/likes`,
-    data: {photo: photo}
+    data: {like: like}
   });
 };
 
-export const deleteLike = (id) => {
+export const deleteLike = (like) => {
+  // debugger
   return $.ajax({
-    method: 'DESTROY',
-    url: `api/likes/${id}`
+    method: 'DELETE',
+    url: `api/likes/${like.id}`,
+    data: {like: like}
   });
 };
 
@@ -58,9 +60,10 @@ export const addComment = ( comment ) => {
   });
 };
 
-export const deleteComment = (id) => {
+export const deleteComment = ( comment ) => {
   return $.ajax({
-    method: 'DESTROY',
-    url: `api/comments/${id}`
+    method: 'DELETE',
+    url: `api/comments/${comment.id}`,
+    data: ( comment )
   });
 };

@@ -13,9 +13,12 @@ class Api::CommentsController < ApplicationController
   end
 
   def destroy
+    # debugger
+    @photo = Photo.find(params[:photo_id])
     @comment = Comment.find(params[:id])
-    @comment.destroy
-    render json @comment
+    if @comment.destroy!
+      render "api/photos/show"
+    end
   end
 
   private
