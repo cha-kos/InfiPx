@@ -22,11 +22,11 @@ p4 = Photo.create({user_id: u4.id, caption: 'pity the fool!', image: 'https://s3
 
 Comment.destroy_all
 
-c1 = Comment.create({user_id: u2.id, photo_id: u1.id, body: 'who eat yo breakfast', username: User.find(u2.id).username })
-c2 = Comment.create({user_id: u1.id, photo_id: ud.id, body: 'who eat yo breakfast', username: User.find(u1.id).username })
-c3 = Comment.create({user_id: u4.id, photo_id: u3.id, body: 'who eat yo breakfast', username: User.find(u4.id).username })
-c4 = Comment.create({user_id: u3.id, photo_id: u4.id, body: 'who eat yo breakfast', username: User.find(u3.id).username })
-c5 = Comment.create({user_id: u2.id, photo_id: u1.id, body: 'you took my heart', username: User.find(u2.id).username })
+c1 = Comment.create({user_id: u2.id, photo_id: p1.id, body: 'who eat yo breakfast', username: User.find(u2.id).username })
+c2 = Comment.create({user_id: u1.id, photo_id: p2.id, body: 'who eat yo breakfast', username: User.find(u1.id).username })
+c3 = Comment.create({user_id: u4.id, photo_id: p3.id, body: 'who eat yo breakfast', username: User.find(u4.id).username })
+c4 = Comment.create({user_id: u3.id, photo_id: p4.id, body: 'who eat yo breakfast', username: User.find(u3.id).username })
+c5 = Comment.create({user_id: u2.id, photo_id: p1.id, body: 'you took my heart', username: User.find(u2.id).username })
 
 Like.destroy_all
 
