@@ -18,8 +18,10 @@ class FollowButton extends React.Component {
   }
 
   buttonToggle(){
-    debugger
-    if (this.props.viewerFollows === false){
+    if (this.props.userId === this.props.viewerId){
+      return (<button>Edit Profile</button>);
+    }
+    else if (this.props.viewerFollows === false){
       return (
         <button onClick={this.handleFollow}>Follow</button>
       );
@@ -32,12 +34,18 @@ class FollowButton extends React.Component {
 
   handleFollow(e) {
     e.preventDefault();
-    this.props.createFollow(this.state);
+    this.props.createFollow({
+      followee_id: this.props.userId,
+      follower_id: this.props.viewerId
+    });
   }
 
   handleUnFollow(e) {
     e.preventDefault();
-    this.props.deleteFollow({id: this.props.followId, user_id: this.props.userId});
+    this.props.deleteFollow({
+      id: this.props.followId,
+      followee_id: this.props.userId
+    });
   }
 
 

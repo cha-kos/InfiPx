@@ -3,7 +3,7 @@ import FollowButton from './follow_button';
 import { createFollow, deleteFollow } from '../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
+  // debugger
   return({
     viewerFollows: state.user.viewer_follows,
     userId: state.user.id,

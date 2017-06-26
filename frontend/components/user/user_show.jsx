@@ -35,6 +35,9 @@ class User extends React.Component {
         <Header/>
         <img src={this.props.user.avatar_url} />
         <p>{this.props.user.username}</p>
+        <p>{this.props.user.followers} Followers</p>
+        <p>{this.props.user.following} Following</p>
+        <p>{this.props.user.following} Following</p>
         <FollowButton />
       </div>
     );
