@@ -22,6 +22,13 @@ export const signup = (user) => (dispatch) => {
     ));
   };
 
+export const editUser = (user) => (dispatch) => {
+  return APIUtil.updateUser(user).then(
+    (currentUser)=> dispatch(receiveCurrentUser(currentUser)),
+    (errors)=> dispatch(receiveErrors(errors)
+    ));
+};
+
 export const clearCurrentUser = () => {
   return {type: CLEAR_CURRENT_USER};
 };

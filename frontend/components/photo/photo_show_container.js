@@ -4,6 +4,7 @@ import PhotoShow from './photo_show';
 import { requestPhoto } from '../../actions/photo_actions';
 
 const mapStateToProps = (state, ownProps) => {
+  debugger
   return({
     photo: state[ownProps.params.match.id]
   });

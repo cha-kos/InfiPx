@@ -17,7 +17,9 @@ Photo.destroy_all
 
 p1 = Photo.create({user_id: u1.id, caption: 'pity the fool!', image: 'https://s3.us-east-2.amazonaws.com/infipx-dev/photos/images/000/000/012/original/mr_T.jpg'})
 p2 = Photo.create({user_id: u2.id, caption: 'pity the fool!', image: 'https://s3.us-east-2.amazonaws.com/infipx-dev/photos/images/000/000/012/original/mr_T.jpg'})
-p3 = Photo.create({user_id: u3.id, caption: 'pity the fool!', image: 'https://s3.us-east-2.amazonaws.com/infipx-dev/photos/images/000/000/012/original/mr_T.jpg'})
+p2 = Photo.create({user_id: u3.id, caption: 'pity the fool!', image: 'https://s3.us-east-2.amazonaws.com/infipx-dev/photos/images/000/000/012/original/mr_T.jpg'})
+p2 = Photo.create({user_id: u3.id, caption: 'pity the fool!v2', image: 'https://s3.us-east-2.amazonaws.com/infipx-dev/photos/images/000/000/012/original/mr_T.jpg'})
+p3 = Photo.create({user_id: u3.id, caption: 'pity the fool!v3', image: 'https://s3.us-east-2.amazonaws.com/infipx-dev/photos/images/000/000/012/original/mr_T.jpg'})
 p4 = Photo.create({user_id: u4.id, caption: 'pity the fool!', image: 'https://s3.us-east-2.amazonaws.com/infipx-dev/photos/images/000/000/012/original/mr_T.jpg'})
 
 Comment.destroy_all

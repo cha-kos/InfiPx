@@ -11,6 +11,7 @@ class PhotoShow extends React.Component{
     // if (!this.props.photo){
     //   return null;
     // }
+    debugger
     return(
       <img src={this.props.photo.image_url} />
     );

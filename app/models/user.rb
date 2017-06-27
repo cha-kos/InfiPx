@@ -77,6 +77,28 @@ class User < ApplicationRecord
      return id
  end
 
+def get_user_photos(user)
+  if(!user)
+    return []
+  end
+  # debugger
+  photos = Photo.where(user_id: user.id).to_a
+  # photos_array = []
+  # photos.each do |photo|
+  #   debugger
+  #   photo_obj = {}
+  #
+  #   photo_obj[caption] = photo.caption
+  #   photo_obj[created_at] = photo.created_at
+  #   photo_obj[created_at] = photo.create_at
+  #   photo_obj[id] = photo.id
+  #   photo_obj[user_id] = photo.user_id
+  #   photo_obj[image_url] = image_path(photo.image.url)
+  #
+  #   photos_arr.unshift(photo_obj)
+  # end
+  return photos.reverse
+end
 
   # def photo_likes_hash
   #   zipped_likes = likes.pluck(:photo_id).zip(likes)

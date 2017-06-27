@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link }  from 'react-router-dom';
-import { logout } from '../../actions/session_actions';
+
 import PhotoIndex from '../photo/photo_index_container';
 import Footer from '../footer/footer';
 
