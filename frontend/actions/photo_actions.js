@@ -6,12 +6,16 @@ export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 
 
 export const requestAllPhotos = () => (dispatch) => {
+  console.log
   return (APIUtil.getAllPhotos()
-    .then(photos => dispatch(receiveAllPhotos(photos))
+    .then(photos =>{
+      console.log(photos, "Actions")
+      return (dispatch(receiveAllPhotos(photos)));}
   ));
 };
 
 export const requestPhoto = (id) => (dispatch) => {
+  debugger
   return (APIUtil.getPhoto(id)
     .then(photos => dispatch(receivePhoto(photos))
   ));

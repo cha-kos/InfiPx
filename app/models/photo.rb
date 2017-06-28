@@ -1,3 +1,5 @@
+
+
 class Photo < ActiveRecord::Base
   validates :user_id, :image, presence: true
 
@@ -32,4 +34,20 @@ class Photo < ActiveRecord::Base
  end
 
 
+
+  def get_photo_feed(current_user_id)
+    # Obtain the cast list for the film 'Alien'
+    execute(<<-SQL)
+      SELECT
+        *
+      FROM
+        photos
+      JOIN
+        users ON photos.user_id = users.id
+      JOIN
+        follows ON follows.followee_id = user.id
+      WHERE
+        follows.follower_id = ? ;
+    SQL
+  end
 end

@@ -3,19 +3,20 @@ import Header from '../header/header_container';
 import FollowButton from '../follow/follow_button_container';
 import SessionUserEditForm from '../session/session_user_edit_form_container';
 import { Link }  from 'react-router-dom';
+import PhotoModal from '../photo/photo_modal_container';
 
 
 class User extends React.Component {
 
   componentDidMount() {
-    this.props.getUser(this.props.match.params.id);
+    // debugger
+    if (!this.props.user) {
+      this.props.getUser(this.props.match.params.id);
+    } else if (this.props.user && this.props.user.id !== this.props.match.params.id){
+      this.props.getUser(this.props.match.params.id);
+    }
   }
 
-  componentWillReceiveProps(nextProps) {
-   if (this.props.match.params.id !== nextProps.match.params.id) {
-     this.props.getUser(nextProps.match.params.id);
-   }
-  }
 
   userPhotos () {
     if (!this.props.user.photos){
@@ -23,8 +24,12 @@ class User extends React.Component {
   } else{
       return (<ul>
     {this.props.user.photos.map (photo => {
-  
-        return (<li><Link to={`/photos/${photo.id}`}><img src={photo.image_url}/></Link></li>);
+
+        return (<li><img src={photo.image_url}
+          onClick={() => this.props.openModal(
+            <PhotoModal id={photo.id} userId={this.props.user.id}/>
+          )}/></li>);
+        // return (<li><Link to={`/photos/${photo.id}`}><img src={photo.image_url}/></Link></li>);
 
       }
      )}
@@ -46,12 +51,12 @@ class User extends React.Component {
       return (<h3>...loading</h3>);
       }
 
-      // debugger
+
     return (
       <div >
         <Header/>
         <div className='user-show-div'>
-          <FollowButton />
+          <FollowButton user_id={this.props.user.id}/>
           <img src={this.props.user.avatar_url} />
           <p>{this.props.user.username}</p>
           <p>{this.props.user.full_name}</p>
@@ -59,7 +64,6 @@ class User extends React.Component {
           <p>{this.props.user.followers} Followers</p>
           <p>{this.props.user.following} Following</p>
           <p>{this.postCount()} Posts</p>
-          <Link to={`/users/${this.props.currentUser.id}/edit`}>Edit</Link>
           {this.userPhotos()}
         </div>
       </div>

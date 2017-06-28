@@ -7,21 +7,19 @@ import {
   REMOVE_COMMENT
 } from '../actions/photo_actions';
 
-// const defaultState = {
-//   entities: null,
-//   currentPhoto: null
-// };
+const initialState = {};
 
-const photoReducer = (state = {}, action) => {
+const photoReducer = (state = initialState, action) => {
   // Object.freeze(state);
   // debugger
   let newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_ALL_PHOTOS:
-      return merge({}, state, action.photos);
+    console.log(action.photos, "Reducer");
+      return merge({}, newState, action.photos);
     case RECEIVE_PHOTO:
-    let photo = merge({}, state, {[action.photo.id]: action.photo});
-    return photo;
+      newState[action.photo.id] = action.photo;
+    return newState;
     case REMOVE_PHOTO:
       delete newState[action.photo.id];
       return newState;
@@ -29,8 +27,8 @@ const photoReducer = (state = {}, action) => {
     // photo = merge({}, state, action.user.photos);
     // return photo;
     case REMOVE_COMMENT:
-    Object.assign(state[action.photo.id], action.photo);
-    return state;
+    Object.assign(newState[action.photo.id], action.photo);
+    return newState;
     default:
       return state;
   }

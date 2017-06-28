@@ -5,10 +5,10 @@ import { createFollow, deleteFollow } from '../../actions/user_actions';
 const mapStateToProps = (state, ownProps) => {
   // debugger
   return({
-    viewerFollows: state.user.viewer_follows,
-    userId: state.user.id,
+    viewerFollows: state.user[ownProps.user_id].viewer_follows,
+    userId: state.user[ownProps.user_id].id,
     viewerId: state.session.currentUser.id,
-    followId: state.user.viewer_follow_id,
+    followId: state.user[ownProps.user_id].viewer_follow_id,
   });
 };
 

@@ -15,12 +15,12 @@ u4 =User.create({ username: "franky", password: "charles" })
 
 Photo.destroy_all
 
-p1 = Photo.create({user_id: u1.id, caption: 'pity the fool!', image: 'https://s3.us-east-2.amazonaws.com/infipx-dev/photos/images/000/000/012/original/mr_T.jpg'})
-p2 = Photo.create({user_id: u2.id, caption: 'pity the fool!', image: 'https://s3.us-east-2.amazonaws.com/infipx-dev/photos/images/000/000/012/original/mr_T.jpg'})
-p2 = Photo.create({user_id: u3.id, caption: 'pity the fool!', image: 'https://s3.us-east-2.amazonaws.com/infipx-dev/photos/images/000/000/012/original/mr_T.jpg'})
-p2 = Photo.create({user_id: u3.id, caption: 'pity the fool!v2', image: 'https://s3.us-east-2.amazonaws.com/infipx-dev/photos/images/000/000/012/original/mr_T.jpg'})
-p3 = Photo.create({user_id: u3.id, caption: 'pity the fool!v3', image: 'https://s3.us-east-2.amazonaws.com/infipx-dev/photos/images/000/000/012/original/mr_T.jpg'})
-p4 = Photo.create({user_id: u4.id, caption: 'pity the fool!', image: 'https://s3.us-east-2.amazonaws.com/infipx-dev/photos/images/000/000/012/original/mr_T.jpg'})
+p1 = Photo.create({user_id: u1.id, username: u1.username, caption: 'pity the fool!', image: File.open('app/assets/images/mr_T.jpg')})
+p2 = Photo.create({user_id: u2.id, username: u2.username, caption: 'pity the fool!', image: File.open('app/assets/images/mr_T.jpg')})
+p2 = Photo.create({user_id: u3.id, username: u3.username, caption: 'pity the fool!', image: File.open('app/assets/images/mr_T.jpg')})
+p2 = Photo.create({user_id: u3.id, username: u3.username, caption: 'pity the fool!v2', image: File.open('app/assets/images/mr_T.jpg')})
+p3 = Photo.create({user_id: u3.id, username: u3.username, caption: 'pity the fool!v3', image: File.open('app/assets/images/mr_T.jpg')})
+p4 = Photo.create({user_id: u4.id, username: u4.username, caption: 'pity the fool!', image: File.open('app/assets/images/mr_T.jpg')})
 
 Comment.destroy_all
 

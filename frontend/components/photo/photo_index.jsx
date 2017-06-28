@@ -42,7 +42,8 @@ class PhotoIndex extends React.Component{
 
             return (
               <li>
-              <img src={this.props.currentUser.avatar_url}/>
+              <img src={photo.image_url}/>
+              <Link to={`/users/${photo.user_id}`}>{photo.username}</Link>
               <p> {photo.num_likes} likes. "{photo.caption}" </p>
               <LikeButton photoId={photo.id} liked={photo.viewer_liked} likeId={photo.viewer_like_id}/>
                   {this.commentList(photo)}

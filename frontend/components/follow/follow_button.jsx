@@ -19,7 +19,7 @@ class FollowButton extends React.Component {
 
   buttonToggle(){
     if (this.props.userId === this.props.viewerId){
-      return (<button>Edit Profile</button>);
+      return (<Link to={`/users/${this.props.viewerId}/edit`}><button>Edit Profile</button></Link>);
     }
     else if (this.props.viewerFollows === false){
       return (

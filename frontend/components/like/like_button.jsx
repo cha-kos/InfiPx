@@ -17,7 +17,7 @@ class LikeButton extends React.Component {
   }
 
   buttonToggle(){
-    // debugger
+
     if (this.props.liked === false){
       return (
         <button onClick={this.handleLike}>Like</button>
@@ -35,7 +35,6 @@ class LikeButton extends React.Component {
   }
 
   handleUnLike(e) {
-    // debugger
     e.preventDefault();
     this.props.deleteLike({id: this.props.likeId, photo_id: this.props.photoId});
   }
@@ -45,6 +44,7 @@ class LikeButton extends React.Component {
   // }
 
   render(){
+
     return(
       <section className='like-button'>
             {this.buttonToggle()}

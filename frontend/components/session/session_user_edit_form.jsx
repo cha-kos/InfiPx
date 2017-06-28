@@ -28,7 +28,9 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.editUser({user}).then( () => this.props.history.push(`/users/${this.state.id}`));
+    // debugger
+    this.props.editUser(user)
+      .then( () => this.props.history.push(`/users/${this.state.id}`));
   }
 
   errorText () {

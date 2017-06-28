@@ -5,7 +5,7 @@ import { deleteComment } from '../../actions/photo_actions.js';
 import CommentList from '../comment/comment_list_container';
 
 
-class PhotoShow extends React.Component{
+class PhotoModal extends React.Component{
 
 
 
@@ -39,7 +39,7 @@ class PhotoShow extends React.Component{
     //   <img src={this.state.photo.image_url} />
     // );
     return (
-      <div>
+      <div onClick={(e) => e.stopPropagation()}>
       <img src={this.props.photo.image_url}/>
       <p> {this.props.photo.num_likes} likes. "{this.props.photo.caption}" </p>
       <LikeButton photoId={this.props.photo.id} liked={this.props.photo.viewer_liked} likeId={this.props.photo.viewer_like_id}/>
@@ -50,4 +50,4 @@ class PhotoShow extends React.Component{
   }
 }
 
-export default PhotoShow;
+export default PhotoModal;

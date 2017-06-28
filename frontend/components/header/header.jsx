@@ -4,16 +4,17 @@ import { Link }  from 'react-router-dom';
 import PhotoIndex from '../photo/photo_index_container';
 import Footer from '../footer/footer';
 
-const Header = function({currentUser, logout}) {
+// const Header = function({currentUser, logout}) {
+class Header extends React.Component {
   // function greet() {
   //   return `What does it! ${currentUser ? `, ${currentUser.username}` : '' }!`;
   // }
 
-  const thingsToShow = () => {
-    if (currentUser) {
+  thingsToShow () {
+    if (this.props.currentUser) {
       return (
         <section className="right-nav">
-          <button onClick={logout}>
+          <button onClick={this.props.logout}>
             Logout
           </button>
         </section>
@@ -27,10 +28,12 @@ const Header = function({currentUser, logout}) {
         </section>
       );
     }
-  };
-  const userPath = `/users/${currentUser.id}`;
+  }
 
-  return (
+  // userPath() {return `/users/${currentUser.id}`;}
+
+  render (){
+    return (
     <div>
     <div className='header'>
       <div className='content-wrap'>
@@ -47,7 +50,7 @@ const Header = function({currentUser, logout}) {
         </Link>
         </div>
         <section className="search-wrap">
-          <button onClick={logout}>
+          <button onClick={this.props.logout}>
             Logout
           </button>
         </section>
@@ -65,7 +68,7 @@ const Header = function({currentUser, logout}) {
               </svg>
             </div>
             <div className='profile-icon-div'>
-            <Link to={userPath}>
+            <Link to={`/users/${this.props.currentUser.id}`}>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1"/>
                 <circle cx="12" cy="7" r="4" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1"/>
@@ -77,8 +80,8 @@ const Header = function({currentUser, logout}) {
       </div>
     </div>
     </div>
-  );
-};
+  );}
+}
 
 export default Header;
 
