@@ -26,7 +26,15 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
+    debugger
     this.props.processForm({user});
+  }
+
+  demoLogin(e) {
+    this.setState({username: 'charles',password: 'charles'})
+    // const user = {username: 'charles', password: 'charles', errors: []};
+    // debugger
+    // this.props.demologin({user});
   }
 
   errorText () {
@@ -96,7 +104,7 @@ class SessionForm extends React.Component {
                   <div className='or-line'/>
                 </div>
               <span className='option-login'>
-                <button className='option-login-button'>
+                <button className='option-login-button' onClick = {() => this.setState({username: 'charles', password: 'charles'})}>
                   <span className='option-login-text'><i className="fa fa-facebook-official fa-lg" aria-hidden="true">
                   </i> Log in with Demo Account</span>
                 </button>

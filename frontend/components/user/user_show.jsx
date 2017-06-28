@@ -26,7 +26,7 @@ class User extends React.Component {
     {this.props.user.photos.map (photo => {
 
         return (<li><img src={photo.image_url}
-          onClick={() => this.props.openModal(
+          onClick={this.props.openModal(
             <PhotoModal id={photo.id} userId={this.props.user.id}/>
           )}/></li>);
         // return (<li><Link to={`/photos/${photo.id}`}><img src={photo.image_url}/></Link></li>);

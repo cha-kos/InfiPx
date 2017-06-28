@@ -26,6 +26,7 @@ const mapDispatchToProps = function(dispatch, ownProps) {
         return dispatch(processForm(user));
       },
       clearErrors: () => dispatch(clearErrors()),
+      demologin: (user) => dispatch(login(user)),
       formType
     };
 };
