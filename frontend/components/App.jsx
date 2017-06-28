@@ -8,7 +8,6 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Footer from './footer/footer';
 import PhotoIndex from './photo/photo_index_container';
 import PhotoShow from './photo/photo_show_container';
-// import PhotoUploadForm from './photo/photo_upload_form';
 import Modal from './modal/modal_container';
 
 const App = () => {

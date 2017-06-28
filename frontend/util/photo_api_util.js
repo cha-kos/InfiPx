@@ -13,14 +13,14 @@ export const getPhoto = (id) => {
 };
 
 
-export const addPhoto = (formData, callback) => {
+export const addPhoto = (formData) => {
   return $.ajax({
     method: 'POST',
     url: `api/photos`,
     contentType: false,
-    processDate: false,
+    processData: false,
     data: formData,
-    success: () => callback()
+    // success: () => callback()
   });
 };
 

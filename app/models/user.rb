@@ -57,7 +57,7 @@ class User < ApplicationRecord
 
 
   def current_user_follows(current_user)
-  
+
     follows = false
     self.followers.each do |follow|
       if (follow.follower_id == current_user.id)
@@ -101,7 +101,7 @@ end
       .select("photos.*")
       .joins("JOIN users ON photos.user_id = users.id")
       .joins("JOIN follows ON follows.followee_id = users.id")
-      .where(follows: {follower_id: self.id})
+      .where("follows.follower_id = #{self.id} OR photos.user_id = #{self.id}")
       .order("photos.created_at DESC")
       .limit(15)
   end

@@ -11,11 +11,16 @@ class User extends React.Component {
   componentDidMount() {
     if (!this.props.user) {
       this.props.getUser(this.props.match.params.id);
-    } else if (this.props.user && this.props.user.id !== this.props.match.params.id){
+    } else if (!this.props.user[this.props.match.params.id]){
       this.props.getUser(this.props.match.params.id);
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.match.params.id !== this.props.match.params.id) {
+      this.props.getUser(nextProps.match.params.id);
+    }
+  }
 
   userPhotos () {
     if (!this.props.user.photos){
