@@ -15,7 +15,6 @@ class PhotoIndex extends React.Component{
   }
 
   // removeComment( comment ){
-  //   debugger
   //     this.props.deleteComment(comment);
   // }
 
@@ -32,7 +31,6 @@ class PhotoIndex extends React.Component{
   }
 
   render () {
-
     return(
       <div>
       <Header/>

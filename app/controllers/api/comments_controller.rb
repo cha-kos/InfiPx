@@ -1,7 +1,7 @@
 class Api::CommentsController < ApplicationController
 
   def create
-  
+
     @photo = Photo.find(params[:comment][:photo_id])
     @comment = Comment.new(comment_params)
 
@@ -13,7 +13,6 @@ class Api::CommentsController < ApplicationController
   end
 
   def destroy
-    # debugger
     @photo = Photo.find(params[:photo_id])
     @comment = Comment.find(params[:id])
     if @comment.destroy!

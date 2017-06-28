@@ -5,7 +5,7 @@ class Api::LikesController < ApplicationController
     def create
       @photo = Photo.find(params[:like][:photo_id])
       @like = Like.new(like_params)
-        # debugger
+
 
       if @like.save!
         render "api/photos/show"
@@ -15,16 +15,16 @@ class Api::LikesController < ApplicationController
     end
 
     def destroy
-      # debugger
+
       @like = Like.find(params[:id])
       @photo = Photo.find(params[:like][:photo_id])
-      # debugger
+
       @like.destroy
       render "api/photos/show"
     end
 
     private
-    # end private
+
     def like_params
       params.require(:like).permit(:photo_id, :user_id)
     end

@@ -13,7 +13,7 @@ class Photo < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   def current_user_liked(current_user)
-    # debugger
+
     liked = false
     self.likes.each do |like|
       if (like.user_id == current_user.id)
@@ -35,19 +35,19 @@ class Photo < ActiveRecord::Base
 
 
 
-  def get_photo_feed(current_user_id)
-    # Obtain the cast list for the film 'Alien'
-    execute(<<-SQL)
-      SELECT
-        *
-      FROM
-        photos
-      JOIN
-        users ON photos.user_id = users.id
-      JOIN
-        follows ON follows.followee_id = user.id
-      WHERE
-        follows.follower_id = ? ;
-    SQL
-  end
+  # def get_photo_feed(current_user_id)
+  #   # Obtain the cast list for the film 'Alien'
+  #   execute(<<-SQL)
+  #     SELECT
+  #       *
+  #     FROM
+  #       photos
+  #     JOIN
+  #       users ON photos.user_id = users.id
+  #     JOIN
+  #       follows ON follows.followee_id = user.id
+  #     WHERE
+  #       follows.follower_id = ? ;
+  #   SQL
+  # end
 end

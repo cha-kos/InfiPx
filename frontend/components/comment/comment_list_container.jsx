@@ -3,7 +3,6 @@ import CommentList from './comment_list';
 import { deleteComment } from '../../actions/photo_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
 
   return({
     currentUser: state.session.currentUser,

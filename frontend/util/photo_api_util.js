@@ -47,7 +47,6 @@ export const addLike = ( like ) => {
 };
 
 export const deleteLike = (like) => {
-  // debugger
   return $.ajax({
     method: 'DELETE',
     url: `api/likes/${like.id}`,

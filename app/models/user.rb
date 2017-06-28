@@ -57,7 +57,7 @@ class User < ApplicationRecord
 
 
   def current_user_follows(current_user)
-    # debugger
+  
     follows = false
     self.followers.each do |follow|
       if (follow.follower_id == current_user.id)

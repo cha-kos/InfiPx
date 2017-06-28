@@ -9,7 +9,6 @@ import PhotoModal from '../photo/photo_modal_container';
 class User extends React.Component {
 
   componentDidMount() {
-    // debugger
     if (!this.props.user) {
       this.props.getUser(this.props.match.params.id);
     } else if (this.props.user && this.props.user.id !== this.props.match.params.id){
@@ -24,9 +23,8 @@ class User extends React.Component {
   } else{
       return (<ul>
     {this.props.user.photos.map (photo => {
-
-        return (<li><img src={photo.image_url}
-          onClick={this.props.openModal(
+        return (<li id={photo.id}><img className = 'user-photo' src={photo.image_url}
+          onClick={() => this.props.openModal(
             <PhotoModal id={photo.id} userId={this.props.user.id}/>
           )}/></li>);
         // return (<li><Link to={`/photos/${photo.id}`}><img src={photo.image_url}/></Link></li>);

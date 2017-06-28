@@ -4,7 +4,7 @@
 #     json.username current_user.username
 #     json.feed current_user.fetch_photo_feed
     # json.likes do
-    #   debugger
+    #  
     #   json.array! current_user.likes do |like|
     #     like.photo_id
     #   end

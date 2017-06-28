@@ -11,7 +11,6 @@ class PhotoModal extends React.Component{
 
 
   componentDidMount(){
-    debugger
     if (!this.props.photo){
     this.props.requestPhoto(this.props.id);
   }
@@ -32,7 +31,6 @@ class PhotoModal extends React.Component{
   }
 
   render () {
-    debugger
     if (!this.props.photo){
       return null;
     }

@@ -31,7 +31,6 @@ class PhotoShow extends React.Component{
   }
 
   render () {
-    debugger
     if (!this.props.photo){
       return null;
     }

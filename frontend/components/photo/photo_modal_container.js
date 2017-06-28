@@ -6,7 +6,6 @@ import { selectPhoto } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
   // dispatch(requestPhoto(ownProps.id))
-  debugger
   return({
     photo: state.photos[ownProps.id],
     // photo: selectPhoto(ownProps.id, ownProps.userId, state),

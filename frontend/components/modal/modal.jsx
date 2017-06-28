@@ -7,12 +7,11 @@ class Modal extends React.Component {
   }
 
   render () {
-  
+
     if(this.props.open) {
 
       return (
         <div className={open ? "modal-frame" : "modal-frame hidden"} onClick={ () => this.props.closeModal()}>
-        <p>This is the modal</p>
           <div className="modalContent">
             {this.props.component}
           </div>
