@@ -20,7 +20,7 @@ class User < ApplicationRecord
   primary_key: :id
 
 
-  has_attached_file :avatar, default_url: "mr_T.jpg"
+  has_attached_file :avatar, default_url: "empty_avatar.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
 
@@ -92,12 +92,13 @@ class User < ApplicationRecord
 
 
   def fetch_photo_feed
-    Photo
+      Photo
       .select("photos.*")
-      .joins("JOIN users ON photos.user_id = users.id")
-      .joins("JOIN follows ON follows.followee_id = users.id")
+      .joins(:user)
+      .joins("LEFT OUTER JOIN follows ON follows.followee_id = users.id")
       .where("follows.follower_id = #{self.id} OR photos.user_id = #{self.id}")
       .order("photos.created_at DESC")
       .limit(15)
+
   end
 end

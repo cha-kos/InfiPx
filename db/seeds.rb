@@ -9,18 +9,18 @@
 User.destroy_all
 
 u1 = User.create({ username: "charles", password: "charles" })
-u2 =User.create({ username: "raymond", password: "charles" })
-u3 =User.create({ username: "vinny", password: "charles" })
-u4 =User.create({ username: "franky", password: "charles" })
+u2 = User.create({ username: "raymond", password: "charles" })
+u3 = User.create({ username: "vinny", password: "charles" })
+u4 = User.create({ username: "franky", password: "charles" })
 
 Photo.destroy_all
 
-p1 = Photo.create({user_id: u1.id, username: u1.username, caption: 'pity the fool!', image: File.open('app/assets/images/mr_T.jpg')})
-p2 = Photo.create({user_id: u2.id, username: u2.username, caption: 'pity the fool!', image: File.open('app/assets/images/mr_T.jpg')})
-p2 = Photo.create({user_id: u3.id, username: u3.username, caption: 'pity the fool!', image: File.open('app/assets/images/mr_T.jpg')})
-p2 = Photo.create({user_id: u3.id, username: u3.username, caption: 'pity the fool!v2', image: File.open('app/assets/images/mr_T.jpg')})
-p3 = Photo.create({user_id: u3.id, username: u3.username, caption: 'pity the fool!v3', image: File.open('app/assets/images/mr_T.jpg')})
-p4 = Photo.create({user_id: u4.id, username: u4.username, caption: 'pity the fool!', image: File.open('app/assets/images/mr_T.jpg')})
+p1 = Photo.create({user_id: u1.id, username: u1.username, caption: 'pity the fool!', image: File.open('app/assets/images/empty_avatar.png')})
+p2 = Photo.create({user_id: u2.id, username: u2.username, caption: 'pity the fool!', image: File.open('app/assets/images/empty_avatar.png')})
+p2 = Photo.create({user_id: u3.id, username: u3.username, caption: 'pity the fool!', image: File.open('app/assets/images/empty_avatar.png')})
+p2 = Photo.create({user_id: u3.id, username: u3.username, caption: 'pity the fool!v2', image: File.open('app/assets/images/empty_avatar.png')})
+p3 = Photo.create({user_id: u3.id, username: u3.username, caption: 'pity the fool!v3', image: File.open('app/assets/images/empty_avatar.png')})
+p4 = Photo.create({user_id: u4.id, username: u4.username, caption: 'pity the fool!', image: File.open('app/assets/images/empty_avatar.png')})
 
 Comment.destroy_all
 

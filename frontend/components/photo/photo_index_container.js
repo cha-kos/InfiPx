@@ -6,7 +6,7 @@ import { selectAllPhotos } from '../../reducers/selectors';
 import { deleteComment } from '../../actions/photo_actions.js';
 
 const mapStateToProps = (state) => {
-
+  // debugger
   return({
     photos: selectAllPhotos(state.photos),
     currentUser: state.session.currentUser,

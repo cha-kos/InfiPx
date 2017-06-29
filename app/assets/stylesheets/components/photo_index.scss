@@ -137,7 +137,7 @@
 
 .num-likes-container{
   padding-top: 3px;
-  margin-bottom: 8px;
+  margin-bottom: 3px;
   flex-direction: row;
   align-items: stretch;
   border: 0 solid #000;
@@ -158,6 +158,10 @@
   flex-grow: 1;
   position: relative;
   vertical-align: baseline;
+}
+
+.caption-div{
+  padding-bottom: 5px;
 }
 
 .comment-list{

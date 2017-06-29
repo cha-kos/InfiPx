@@ -31,12 +31,9 @@ class PhotoIndex extends React.Component{
     );
   }
 
-  getFocus() {
-    debugger
-    document.getElementById("comment-field").focus();
-  }
 
   render () {
+    debugger
     return(
       <div>
       <Header/>
@@ -69,6 +66,12 @@ class PhotoIndex extends React.Component{
                 <section className='num-likes-container'>
                   <div className='num-likes'> {photo.num_likes} likes</div>
                 </section>
+                <div className='comment-div'>
+                <div className='caption-div'>
+                  <Link to={`/users/${photo.user_id}`} className='comment-user-name'>{photo.username}</Link>
+                  <span className='comment-body'>{photo.caption}</span>
+                </div>
+                </div>
                   {this.commentList(photo)}
                     <Link to={`/photos/${photo.id}`} className='post-time-link' id={photo.id}>
                       <div className='post-time-div'>{photo.time_ago}</div>

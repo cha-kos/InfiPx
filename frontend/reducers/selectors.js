@@ -7,6 +7,7 @@
 //  };
 
 export const selectAllPhotos = state => {
+  debugger
   return Object.keys(state).reverse().map(key => state[key]);
   // return currentUser.feedOrder.map(orderId => state.photos[orderId]);
 };
