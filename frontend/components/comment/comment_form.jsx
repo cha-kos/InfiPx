@@ -30,18 +30,15 @@ class CommentForm extends React.Component {
 
   render(){
     return(
-      <section className='post-form'>
-        <form  onSubmit={this.handleSubmit} className='post-form-container'>
+      <section className='comment-form-container'>
+        <form  onSubmit={this.handleSubmit} className='comment-form'>
           <div className='body'>
-            <input
-              className="form-body"
-              placeholder='Add Comment'
+            <input id="comment-field"
+              className="comment-form-body"
+              placeholder='Add a comment...'
               type="text"
               value={this.state.body}
               onChange={this.update("body")}/>
-          </div>
-          <div>
-            <button>Submit</button>
           </div>
         </form>
       </section>
@@ -50,3 +47,6 @@ class CommentForm extends React.Component {
 }
 
 export default CommentForm;
+// <div>
+// <button>Submit</button>
+// </div>

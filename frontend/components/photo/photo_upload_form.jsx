@@ -45,6 +45,7 @@ update(field) {
    e.preventDefault();
 
 
+
   // let photoData = {photo: {
   //   caption: this.state.caption,
   // }};
@@ -94,9 +95,7 @@ render(){
 
         </div>
       </div>
-      <div className='paste-url'>
-        <input id="paste-url-input" placeholder="Paste Image or URL" />
-      </div>
+
       <div className='misc'>
       </div>
     </div>,

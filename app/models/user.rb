@@ -58,43 +58,38 @@ class User < ApplicationRecord
 
   def current_user_follows(current_user)
 
-    follows = false
-    self.followers.each do |follow|
-      if (follow.follower_id == current_user.id)
-        follows = true
+      follows = false
+      self.followers.each do |follow|
+        if (follow.follower_id == current_user.id)
+          follows = true
+        end
       end
-    end
-    return follows
- end
-
- def current_user_follow_id(current_user)
-   id = nil
-   self.followers.each do |follow|
-     if (follow.follower_id == current_user.id)
-       id = follow.id
-     end
+      return follows
    end
-     return id
- end
 
-def get_user_photos(user)
-  if(!user)
-    return []
+   def current_user_follow_id(current_user)
+     id = nil
+     self.followers.each do |follow|
+       if (follow.follower_id == current_user.id)
+         id = follow.id
+       end
+     end
+       return id
+   end
+
+  def get_user_photos(user)
+    if(!user)
+      return []
+    end
+    photos = Photo.where(user_id: user.id).to_a
+    return photos.reverse
   end
-  photos = Photo.where(user_id: user.id).to_a
-  return photos.reverse
-end
 
-  # def photo_likes_hash
-  #   zipped_likes = likes.pluck(:photo_id).zip(likes)
-  #   likes_hash = {}
-  #
-  #   zipped_likes.each do |(id, like)|
-  #     likes_hash[id] = like
-  #   end
-  #
-  #   likes_hash
-  # end
+  def self.get_avatar(id)
+    user = User.find(id)
+    return user.avatar.url
+  end
+
 
   def fetch_photo_feed
     Photo

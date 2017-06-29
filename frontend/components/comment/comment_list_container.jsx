@@ -9,7 +9,8 @@ const mapStateToProps = (state, ownProps) => {
     body: '',
     photoId: ownProps.photoId,
     comment: ownProps.com,
-    photoAuthorId: ownProps.photoAuthorId
+    photoAuthorId: ownProps.photoAuthorId,
+    userId: ownProps.userId
   });
 };
 

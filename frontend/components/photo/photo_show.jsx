@@ -44,6 +44,7 @@ class PhotoShow extends React.Component{
       <LikeButton photoId={this.props.photo.id} liked={this.props.photo.viewer_liked} likeId={this.props.photo.viewer_like_id}/>
           {this.commentList(this.props.photo)}
       <CommentForm photoId={this.props.photo.id}/>
+      <button onClick={this.props.deletePhoto}>Delete</button>
       </div>
     );
   }

@@ -30,6 +30,16 @@ class PhotoModal extends React.Component{
     );
   }
 
+  deleteButton(){
+    if (this.props.currentUserId === this.props.photo.user_id){
+      return (
+        <button onClick={() => this.props.deletePhoto(this.props.photo.id)
+          .then(()=>this.props.getUser(this.props.currentUserId))
+          .then(()=>this.props.closeModal())}>Delete</button>
+      );
+    }
+  }
+
   render () {
     if (!this.props.photo){
       return null;
@@ -44,6 +54,7 @@ class PhotoModal extends React.Component{
       <LikeButton photoId={this.props.photo.id} liked={this.props.photo.viewer_liked} likeId={this.props.photo.viewer_like_id}/>
           {this.commentList(this.props.photo)}
       <CommentForm photoId={this.props.photo.id}/>
+      {this.deleteButton()}
       </div>
     );
   }
