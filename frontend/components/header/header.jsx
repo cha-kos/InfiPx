@@ -11,21 +11,42 @@ class Header extends React.Component {
   //   return `What does it! ${currentUser ? `, ${currentUser.username}` : '' }!`;
   // }
 
-  thingsToShow () {
+  rightNavShow () {
     if (this.props.currentUser) {
       return (
-        <section className="right-nav">
-          <button onClick={this.props.logout}>
-            Logout
-          </button>
-        </section>
+        <div className='right-nav-wrap'>
+          <div className='right-icon-wrap'>
+            <div className='compass-icon-div'
+              onClick={() => this.props.openModal(<PhotoUploadForm
+                id={this.props.currentUser.id}
+                username={this.props.currentUser.username}/>)}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1"/>
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1"/>
+              </svg>
+            </div>
+            <div className='heart-icon-div'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+            <div className='profile-icon-div'>
+            <Link to={`/users/${this.props.currentUser.id}`}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1"/>
+                <circle cx="12" cy="7" r="4" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1"/>
+              </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
       );
     } else {
       return (
-        <section className="right-nav">
-          <Link to="/login">Log In</Link>
+        <section className="right-nav-wrap">
+          <Link to="/login" className='header-login'>Log In</Link>
            or
-          <Link to="/signup">Sign Up</Link>
+          <Link to="/signup" className='header-signup'>Sign Up</Link>
         </section>
       );
     }
@@ -55,32 +76,7 @@ class Header extends React.Component {
             Logout
           </button>
         </section>
-        <div className='right-nav-wrap'>
-          <div className='right-icon-wrap'>
-            <div className='compass-icon-div'
-              onClick={() => this.props.openModal(<PhotoUploadForm
-                id={this.props.currentUser.id}
-                username={this.props.currentUser.username}/>)}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="10" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1"/>
-                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1"/>
-              </svg>
-            </div>
-            <div className='heart-icon-div'>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-              </svg>
-            </div>
-            <div className='profile-icon-div'>
-            <Link to={`/users/${this.props.currentUser.id}`}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1"/>
-                <circle cx="12" cy="7" r="4" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1"/>
-              </svg>
-              </Link>
-            </div>
-          </div>
-        </div>
+        {this.rightNavShow()}
       </div>
     </div>
     </div>

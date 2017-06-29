@@ -19,15 +19,25 @@ class FollowButton extends React.Component {
 
   buttonToggle(){
     if (this.props.userId === this.props.viewerId){
-      return (<Link to={`/users/${this.props.viewerId}/edit`}><button>Edit Profile</button></Link>);
+      return (
+        <div className='edit-button-cog'>
+          <section className='edit-button-wrap'>
+            <Link to={`/users/${this.props.viewerId}/edit`}><button className = 'edit-button'>Edit Profile</button></Link>
+          </section>
+          <div className='edit-cog'/>
+        </div>);
     }
     else if (this.props.viewerFollows === false){
       return (
-        <button onClick={this.handleFollow}>Follow</button>
+        <section className='follow-button-wrap'>
+        <button onClick={this.handleFollow} className = 'follow-button'>Follow</button>
+        </section>
       );
     } else {
       return(
-        <button onClick={this.handleUnFollow}>Unfollow</button>
+        <section className='follow-button-wrap'>
+        <button onClick={this.handleUnFollow} className = 'follow-button'>Unfollow</button>
+        </section>
       );
     }
   }
@@ -51,9 +61,7 @@ class FollowButton extends React.Component {
 
   render(){
     return(
-      <section className='follow-button'>
-            {this.buttonToggle()}
-      </section>
+            this.buttonToggle()
     );
   }
 }

@@ -24,6 +24,7 @@ class Photo < ActiveRecord::Base
  end
 
  def current_user_like_id(current_user)
+
    id = nil
    self.likes.each do |like|
      if (like.user_id == current_user.id)

@@ -26,14 +26,14 @@ class User extends React.Component {
     if (!this.props.user.photos){
     return null;
   } else{
-      return (<ul>
+      return (<ul className='user-photo-ul'>
     {this.props.user.photos.map (photo => {
-        return (<li id={photo.id}><img className = 'user-photo' src={photo.image_url}
+        return (<li id={photo.id} className='user-photo-li'>
+        <img className = 'user-photo' src={photo.image_url}
           onClick={() => this.props.openModal(
             <PhotoModal id={photo.id} userId={this.props.user.id}/>
-          )}/></li>);
-        // return (<li><Link to={`/photos/${photo.id}`}><img src={photo.image_url}/></Link></li>);
-
+          )}/>
+          </li>);
       }
      )}
     </ul>);
@@ -58,16 +58,32 @@ class User extends React.Component {
     return (
       <div >
         <Header/>
-        <div className='user-show-div'>
-          <FollowButton user_id={this.props.user.id}/>
-          <img src={this.props.user.avatar_url} />
-          <p>{this.props.user.username}</p>
-          <p>{this.props.user.full_name}</p>
-          <p>{this.props.user.bio}</p>
-          <p>{this.props.user.followers} Followers</p>
-          <p>{this.props.user.following} Following</p>
-          <p>{this.postCount()} Posts</p>
-          {this.userPhotos()}
+        <div className='user-show-wrap'>
+          <div className='user-show-div'>
+            <header className='user-show-header'>
+              <div className='user-show-header-div'>
+              <div className='avatar-div'>
+                <img src={this.props.user.avatar_url} />
+              </div>
+              <div className= 'info-div'>
+                <div className = 'username-and-button'>
+                  <h1 className='username'>{this.props.user.username}</h1>
+                  <FollowButton user_id={this.props.user.id}/>
+                </div>
+                <ul className='posts-followers-following'>
+                  <li className='posts-followers-li'><div className='post-follow-number'>{this.postCount()}</div> <div>posts</div></li>
+                  <li className='posts-followers-li'><div className='post-follow-number'>{this.props.user.followers}</div> <div>followers</div></li>
+                  <li className='following-li'><div className='post-follow-number'>{this.props.user.following}</div> <div>following</div></li>
+                </ul>
+                <div className='fullname-bio-wrap'>
+                <span className='fullname'>{this.props.user.full_name}</span>
+                  <span className='bio'>{this.props.user.bio}</span>
+                </div>
+              </div>
+              </div>
+            </header>
+            {this.userPhotos()}
+          </div>
         </div>
       </div>
     );
