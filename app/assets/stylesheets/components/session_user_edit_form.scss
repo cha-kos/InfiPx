@@ -152,6 +152,8 @@
   }
 }
 
+
+
 .edit-input-field::placeholder{
   color: #a6a6a6;
 }
@@ -161,4 +163,15 @@
 }
 .button{
   max-width: 100px;
+  font-weight: bold;
+  font-size: 14px;
+  height: 30px;
+  cursor: pointer;
+  background: #3897f0;
+  border-color: #3897f0;
+  color: #fff;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+
 }
