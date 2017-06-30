@@ -6,6 +6,7 @@ class Api::LikesController < ApplicationController
       @photo = Photo.find(params[:like][:photo_id])
       @like = Like.new(like_params)
 
+      @like.user_id = current_user.id
 
       if @like.save!
         render "api/photos/show"
