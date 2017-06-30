@@ -1,55 +1,50 @@
 # InfiPx
 
-[Heroku](https://infipx.herokuapp.com/)
-[Trello](https://trello.com/b/pcv11hLy/instapx)
-
-## Minimum Viable Product
-InfiPx is a web application inspired by Instagram build using Ruby on Rails and React/Redux. The goal of this app is to satisfy the following functionality with flawless navigation, plenty of seeds and the most beautiful CSS styling:
-
-- [ ] Hosting on Heroku
-- [ ] Account creation, login, and demo functionality
-- [ ] Images (upload, caption)
-- [ ] Likes linked to image and user (list of likers)
-- [ ] Image comments (extended comment view)
-- [ ] Following/Followers
-- [ ] Photofeed w/ infinite scroll
-- [ ] ****BONUS**** search bar
-- [ ] ****BONUS**** image navigation on profile (left,right: older, newer)
-- [ ] ****BONUS**** photo albums
-- [ ] ****BONUS**** dropdown notification
-- [ ] ****BONUS**** best waves in the world surf feed
-- [ ] ****BONUS**** direct messaging
+[Infipx](https://infipx.herokuapp.com/)
 
 
-* [Wireframes](https://github.com/chrishakos/fullstack-InstaClone/tree/master/docs/Wireframes)
-* [React Components](https://github.com/chrishakos/InfiPx/blob/master/docs/component-heirarchy.md)
-* [Sample State](https://github.com/chrishakos/InfiPx/blob/master/docs/sample-state.md)
-* [DB schema](https://github.com/chrishakos/InfiPx/blob/master/docs/schema.md)
-* [API endpoints](https://github.com/chrishakos/InfiPx/blob/master/docs/api-endpoints.md)
+
+Infipx is a full-stack web application inspired by Instagram. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.
+
+## Features & Implementation
+
+### Secure User Authentication
+
+Users can sign up and log in with validations in Rails' models to ensure that only valid data is saved to the database. Only registered users can access application features. Passwords are hashed using BCrypt.
+
+### Posts Feed
+Posts are stored in the database table, with columns for `id`, `user_id` that references the person who uploaded the post, `image` which is an attached file uploaded to AWS (Amazon Web Services). There is an optional column of `description` of a post. Once logged in, user is redirected to posts feed page and an AJAX call is made to the database and posts of the users that current user is following are fetched.
+
+Each post on posts feed page has owner's avatar, username, image, likes and comments associated to the post
+
+Posts are created through update post form, where user can choose image and add a caption to a post.
+As a post requires a `user_id` column to be successfully saved, posts are always created through current user using current_user in the Rails backend.
+
+![posts-feed](./app/assets/images/posts-feed.png)
+hero
+### Users
+Users are stored in the database in a `users` table. User's show page displays their details and posts. Users can edit their own data and change profile photo.
+
+![posts-feed](./app/assets/images/users-profile.png)
 
 
-## Implementation Timeline
+### Likes and Comments
+Users can like and unlike any post by clicking on the heart icon which turns red when liked, and transparent when not.
 
-### Phase 1: Database setup and Back/Frontend Auth (2 days)
+User can post a comment by clicking on a cloud icon which gives focus to an input field and when user start typing comment can be submitted. Any
+comment made by the user can be deleted, along with any comment on a user's photo.
 
-**Objective:** Rails project functioning with back/frontend auth
+### Follows
 
-### Phase 2: Images (2 days)
+User can follow and unfollow any other user.
 
-**Objective** Images can be created/update/destroyed. Photos displayed in feed and on profile
 
-### Phase 3: Likes (1 days)
+## Future Directions for the Project
 
-**Objective:** Images can be liked and unliked by user
-
-### Phase 4: Comments (1 day)
-
-**Objective:** Comments on Image can be created & destroyed by user.
-
-### Phase 5: Following (1 days)
-
-**Objective:** User can follow/unfollow
-
-### Phase 6: Photo feed (2 days)
-
-**Objective:** Photo feed displays photos from followed users w/ infinite scroll
+In addition to the features already implemented, I plan to continue work on this project.  The next steps for Infipx are outlined below.
+* [ ] Search Bar
+* [ ] Search Bar
+* [ ] Direct Messaging
+* [ ] Hashtags
+* [ ] Full responsiveness (optimization for mobile devices)
+* [ ] Infinite scroll
