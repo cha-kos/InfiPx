@@ -94,7 +94,7 @@ class SessionForm extends React.Component {
                   <div className='password-dummy'/>
                </div>
               <span className='buttonspan'>
-                <button className='button'>{buttonText}</button>
+                <button className='login-button'>{buttonText}</button>
               </span>
                 <div className='or-div'>
                   <div className='or-line'/>
