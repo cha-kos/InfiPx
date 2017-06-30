@@ -23,10 +23,22 @@ export const logout = () => {
 };
 
 export const updateUser = ( user ) => {
+  debugger
   return $.ajax({
     method: 'PATCH',
     url: `/api/users/${user.id}`,
-    data: {user: user}
+    data: {user: user},
+  })
+}
+
+export const updateUserAvatar = ( user ) => {
+  
+  return $.ajax({
+    method: 'PATCH',
+    url: `/api/users/${user.id}`,
+    contentType: false,
+    processData: false,
+    data: user,
   })
 }
 

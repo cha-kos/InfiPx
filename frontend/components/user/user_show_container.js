@@ -4,7 +4,7 @@ import User from './user_show';
 import { getUser } from '../../actions/user_actions';
 import {openModal} from '../../actions/modal_actions';
 import { selectAllPhotos } from '../../reducers/selectors';
-import {requestPhoto} from '../../actions/photo_actions'
+import {requestPhoto} from '../../actions/photo_actions';
 
 const mapStateToProps = (state, ownProps) => {
 

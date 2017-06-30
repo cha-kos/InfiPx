@@ -57,8 +57,9 @@ componentWillUnmount(){
     // return(
     //   <img src={this.state.photo.image_url} />
     // );
+    debugger
     return (
-      <body>
+      <div>
       <Header/>
 
       <div className ='photo-show-frame'>
@@ -88,9 +89,9 @@ componentWillUnmount(){
               <section className='num-likes-container'>
                 <div className='num-likes'> {this.props.photo.num_likes} likes</div>
               </section>
-              <Link onClick={this.props.closeModal}to={`/photos/${this.props.photo.id}`} className='post-time-link' id={this.props.photo.id}>
+              <div className='post-time-link'>
                 <div className='post-time-div'>{this.props.photo.time_ago}</div>
-              </Link>
+              </div>
               <div className='comment-form-delete-button'>
                 <CommentForm photoId={this.props.photo.id}/>
                 {this.deleteButton()}
@@ -99,7 +100,7 @@ componentWillUnmount(){
             </div>
       </div>
       </div>
-      </body>
+      </div>
     );
   }
 }

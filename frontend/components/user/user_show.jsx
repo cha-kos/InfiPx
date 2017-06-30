@@ -4,6 +4,8 @@ import FollowButton from '../follow/follow_button_container';
 import SessionUserEditForm from '../session/session_user_edit_form_container';
 import { Link }  from 'react-router-dom';
 import PhotoModal from '../photo/photo_modal_container';
+import AvatarUploadForm from '../session/avatar_upload_container';
+
 
 
 class User extends React.Component {
@@ -62,7 +64,10 @@ class User extends React.Component {
           <div className='user-show-div'>
             <header className='user-show-header'>
               <div className='user-show-header-div'>
-              <div className='avatar-div'>
+              <div className='avatar-div'
+              onClick={() => this.props.openModal(<AvatarUploadForm
+                id={this.props.currentUser.id}
+                username={this.props.currentUser.username}/>)}>
                 <img src={this.props.user.avatar_url} />
               </div>
               <div className= 'info-div'>

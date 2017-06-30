@@ -17,11 +17,12 @@ class Api::UsersController < ApplicationController
 
   def update
 
+
     @user = User.find(params[:user][:id])
 
     if @user.update_attributes(user_params)
       login(@user)
-      render "api/sessions/show"
+      render "api/users/show"
     else
       render json: @user.errors.full_messages, status: 422
     end
@@ -29,7 +30,7 @@ class Api::UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:username, :password, :full_name, :bio)
+    params.require(:user).permit(:username, :password, :full_name, :bio, :avatar)
   end
 
 

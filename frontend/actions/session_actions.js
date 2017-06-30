@@ -3,6 +3,8 @@ export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const CLEAR_CURRENT_USER = 'CLEAR_CURRENT_USER';
+export const RECEIVE_USER = 'RECEIVE_USER';
+
 
 export const login = (user) => (dispatch) => {
     return APIUtil.login(user).then(
@@ -24,7 +26,14 @@ export const signup = (user) => (dispatch) => {
 
 export const editUser = (user) => (dispatch) => {
   return APIUtil.updateUser(user).then(
-    (currentUser)=> dispatch(receiveCurrentUser(currentUser)),
+    (currentUser)=> dispatch(receiveUser(currentUser)),
+    (errors)=> dispatch(receiveErrors(errors)
+    ));
+};
+
+export const editUserAvatar = (user) => (dispatch) => {
+  return APIUtil.updateUserAvatar(user).then(
+    (currentUser)=> dispatch(receiveUser(currentUser)),
     (errors)=> dispatch(receiveErrors(errors)
     ));
 };
@@ -40,6 +49,12 @@ export const clearErrors = () => {
 export const receiveCurrentUser = (user) => {
   return {
     type: RECEIVE_CURRENT_USER,
+    user,
+  };
+};
+export const receiveUser = (user) => {
+  return {
+    type: RECEIVE_USER,
     user,
   };
 };

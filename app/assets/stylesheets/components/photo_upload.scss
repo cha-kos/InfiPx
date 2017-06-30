@@ -1,0 +1,50 @@
+.drag-and-drop-box{
+  background: white;
+  border-radius: 3px;
+  margin-top: 50px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  text-align: center;
+  padding-bottom: 20px;
+  color: lightgray;
+}
+
+.plus-symbol{
+  width: 100%;
+  align-items: center;
+}
+
+.upload-modal-terms{
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+.image-preview{
+  max-height: 600px;
+  max-width: 600px;
+
+}
+
+.uploadForm{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+.image-caption-button{
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 20px;
+}
+
+.button.upload{
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.caption{
+  border: none;
+  border-bottom: 1px solid #E6E6E6;
+  padding: 5px 10px;
+
+  &:focus{
+    outline: none;
+  }
+}

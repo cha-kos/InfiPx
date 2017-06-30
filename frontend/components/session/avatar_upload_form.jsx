@@ -3,7 +3,7 @@ import { bindall } from 'lodash';
 import {Redirect } from 'react-router-dom';
 import Dropzone from 'react-dropzone';
 
-class PhotoUploadForm extends React.Component {
+class AvatarUploadForm extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -50,11 +50,10 @@ update(field) {
   //   caption: this.state.caption,
   // }};
   let imageData = new FormData();
-  imageData.append("photo[caption]",this.state.caption);
-  imageData.append("photo[image]",this.state.imageFile );
-  this.props.uploadPhoto(imageData)
-  .then( () => this.props.closeModal())
-  .then( () => this.props.history.push(`/`));
+  imageData.append("user[avatar]",this.state.imageFile );
+  imageData.append("user[id]",this.props.id);
+  this.props.editUserAvatar(imageData)
+  .then( () => this.props.closeModal());
   // .then(post => {
   //   imageData.append("image[imageable_id]", post.id );
   //   imageData.append("image[imageable_type]", 'Post' );
@@ -113,15 +112,7 @@ render(){
   const gottenPhoto = [
     <div className='uploadForm'>
       <img className='image-preview' src={this.state.imageUrl} />
-      <div className='image-caption-button'>
-        <input type="text"
-          value={this.state.caption}
-          onChange={this.update('caption')}
-          className="caption"
-          placeholder='Caption'
-        />
-      <button onClick={this.handleSubmit} className='button upload'>Upload</button>
-      </div>
+      <button onClick={this.handleSubmit}>Upload</button>
     </div>
 
   ];
@@ -137,4 +128,4 @@ render(){
 }
 }
 
-export default PhotoUploadForm;
+export default AvatarUploadForm;
