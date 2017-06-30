@@ -10,7 +10,7 @@ User.destroy_all
 
 u1 = User.create({ username: "charles", password: "charles", avatar: File.open('app/assets/images/avatarCharles.png') })
 u2 = User.create({ username: "kel", password: "charles", bio: 'welcome to Good Burger',avatar: File.open('app/assets/images/avatarKel.png') })
-u3 = User.create({ username: "larry", password: "charles", avatar: File.open('app/assets/images/avatarlarry.png') })
+u3 = User.create({ username: "larry", password: "charles", avatar: File.open('app/assets/images/avatarLarry.png') })
 u4 = User.create({ username: "michelangelo", password: "charles", avatar: File.open('app/assets/images/avatarMichelangelo.png') })
 u5 = User.create({ username: "Mr_T", password: "charles", avatar: File.open('app/assets/images/avatarMrT.jpg') })
 u6 = User.create({ username: "Pope", password: "charles", avatar: File.open('app/assets/images/avatarPope.png') })
