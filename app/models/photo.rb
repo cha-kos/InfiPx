@@ -2,7 +2,6 @@
 
 class Photo < ActiveRecord::Base
   validates :user_id, :image, presence: true
-  validates :caption, length: {minimum: 1, allow_nil: true}
 
   belongs_to :user
   has_many :likes
