@@ -79,16 +79,19 @@
 
 .search-wrap button{
   font-weight: bold;
-  font-size: 14px;
+  font-size: 13px;
   height: 30px;
   cursor: pointer;
-  background: #3897f0;
-  border-color: #3897f0;
-  color: #fff;
+  background: #FBFBFB;
+  font-weight: lighter;
+  // background: #3897f0;
+  // border-color: #3897f0;
+  // color: #fff;
   border-radius: 3px;
   border-style: solid;
   border-width: 1px;
   width: 215px;
+  color: #A6A6A6;
 }
 
 .search-input{

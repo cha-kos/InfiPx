@@ -25,4 +25,5 @@
       json.viewer_liked photo.current_user_liked(current_user)
       json.viewer_like_id photo.current_user_like_id(current_user)
       json.created_at photo.created_at
+      json.user_avatar image_path(User.get_avatar(photo.user_id))
   end

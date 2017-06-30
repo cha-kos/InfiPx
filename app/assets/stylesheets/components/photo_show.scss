@@ -1,0 +1,16 @@
+.photo-show-wrap{
+  max-width: 935px;
+  max-height: 600px;
+  display: flex;
+  flex-direction: row;
+  padding-left: 40px;
+  padding-top: 95px
+}
+
+.photo-show-frame{
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

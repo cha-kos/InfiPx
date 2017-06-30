@@ -17,8 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   window.dispatch = store.dispatch;
-  window.requestPhoto = requestPhoto;
-  window.removePhoto = removePhoto;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);
 });

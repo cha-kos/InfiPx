@@ -1,0 +1,164 @@
+.edit-form-body{
+  display: flex;
+  justify-content: center;
+}
+
+
+.edit-form-div{
+  margin-top: 120px;
+  height: 675px;
+  width: 935px;
+}
+
+.edit-text-holder{
+  align-items: center;
+  flex-direction: column;
+  width: 275px;
+  height: 675px;
+  font-size: 16px;
+  font-weight: bold;
+  border-right: 1px solid #e6e6e6;;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+.edit-profile-text{
+  border-left: 2px solid black;
+  padding-left: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.edit-form-box{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.edit{
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 1px;
+  margin: 0;
+  padding: 0;
+  height: 675px;
+  box-sizing: border-box;
+  box-sizing: border-box;
+  font: inherit;
+  display: flex;
+  vertical-align: baseline;
+}
+
+.edit-form{
+  width: 550px;
+  align-items: center;
+  padding-right: 150px
+}
+
+.edit-avatar-username{
+  display: flex;
+  flex-direction: row;
+  padding-left: 140px;
+}
+.edit-avatar-div{
+  padding-top: 28px;
+}
+
+.edit-avatar-div img{
+  height: 38px;
+  width: 38px;
+  border-radius: 50%;
+  image-rendering: auto;
+  border: 1px solid #e6e6e6;
+}
+
+.edit-form-labels{
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-form-labels label{
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  text-align: right;
+  padding-top: 18px;
+  padding-bottom: 14px;
+  padding-left: 40px;
+  font-weight: 600;
+}
+
+.edit-input-div{
+  padding: 10px 5px;
+}
+
+.edit-form-fields{
+  padding-left: 35px;
+}
+
+.edit-form-item{
+  display: flex;
+  flex-direction: row;
+}
+
+.edit-username-and-button{
+  padding-top: 8px;
+  padding-left: 20px;
+}
+
+.edit-username-and-button h1{
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+
+}
+
+.edit-text-area{
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  width: 258px;
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  padding: 5px;
+}
+.edit-text-area{
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  border-radius: 3px;
+  border: 1px solid #efefef;
+  font-weight: lighter;
+  font-size: 14px;
+  padding: 9px 8px 7px 8px;
+  width: 252px;
+
+  &:focus{
+    outline: none;
+    border-color: #b3b3b3;
+  }
+}
+
+.edit-text-area::placeholder{
+  color: #a6a6a6;
+}
+
+
+.edit-input-field{
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  border-radius: 3px;
+  border: 1px solid #efefef;
+  font-weight: lighter;
+  font-size: 14px;
+  padding: 9px 8px 7px 8px;
+  width: 252px;
+
+  &:focus{
+    outline: none;
+    border-color: #b3b3b3;
+  }
+}
+
+.edit-input-field::placeholder{
+  color: #a6a6a6;
+}
+
+.edit-buttonspan{
+  padding-left: 10px;
+}
+.button{
+  max-width: 100px;
+}

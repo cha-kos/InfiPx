@@ -104,6 +104,7 @@
 }
 
 .edit-button-wrap{
+
   text-decoration: none;
   padding: 0 24px;
   margin-left: 20px;
@@ -111,7 +112,7 @@
   height: 28px;
   cursor: pointer;
   background: transparent;
-  border-color: black;
+  border-color: #DFE0E0;
   border-radius: 3px;
   border-style: solid;
   border-width: 1px;
@@ -143,7 +144,15 @@
   margin-left: 5px;
   width: 32px;
   height: 32px;
-  background-image: asset_url('cog_wheel.png')
+}
+
+.edit-cog-button{
+  background: transparent;
+  border: none;
+
+  &:focus{
+    outline: none;
+  }
 }
 
 

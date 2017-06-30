@@ -24,7 +24,11 @@ class FollowButton extends React.Component {
           <section className='edit-button-wrap'>
             <Link to={`/users/${this.props.viewerId}/edit`}><button className = 'edit-button'>Edit Profile</button></Link>
           </section>
-          <div className='edit-cog'/>
+          <button className='edit-cog-button' onClick={this.props.logout}>
+          <div className='edit-cog'>
+            <img src={window.images.cog_wheel}/>
+          </div>
+          </button>
         </div>);
     }
     else if (this.props.viewerFollows === false){
@@ -35,8 +39,8 @@ class FollowButton extends React.Component {
       );
     } else {
       return(
-        <section className='follow-button-wrap'>
-        <button onClick={this.handleUnFollow} className = 'follow-button'>Unfollow</button>
+        <section className='edit-button-wrap'>
+        <button onClick={this.handleUnFollow} className = 'edit-button'>Following</button>
         </section>
       );
     }

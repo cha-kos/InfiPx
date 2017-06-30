@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {login, signup} from '../../actions/session_actions';
 import { Link }  from 'react-router-dom';
+import Header from '../header/header_container';
 
 
 
@@ -13,6 +14,7 @@ class SessionForm extends React.Component {
       username: this.props.currentUser.username,
       bio: this.props.currentUser.bio,
       id: this.props.currentUser.id,
+      avatar_url: this.props.currentUser.avatar_url,
       errors: []
     };
 
@@ -49,44 +51,62 @@ class SessionForm extends React.Component {
 
    return (
      <article>
-      <div className='form-div'>
-       <div className="form-holder">
-         <h1>Edit Profile</h1>
-          <div className='form-box'>
-            <form onSubmit={this.handleSubmit} className='form'>
-              <div className='username'>
-              <label id='Name'>Name</label>
+     <Header/>
+     <div className='edit-form-body'>
+      <div className='edit-form-div'>
+       <div className="form-holder edit">
+       <div className='edit-text-holder'>
+         <div className='edit-profile-text'>Edit Profile</div>
+         </div>
+          <div className='edit-form-box'>
+          <div className='edit-avatar-username'>
+          <div className='edit-avatar-div'>
+            <img src={this.state.avatar_url} />
+          </div>
+          <div className= 'info-div'>
+            <div className = 'edit-username-and-button'>
+              <h1 className='username'>{this.state.username}</h1>
+            </div>
+            </div>
+            </div>
+            <form onSubmit={this.handleSubmit} className='form edit-form'>
+              <div className='edit-form-item'>
+              <div className='edit-form-labels'>
+                <label id='Name'>Name</label>
+                <label id='Username'>Username</label>
+                <label id='Bio'>Bio</label>
+              </div>
+              <div className='edit-form-fields'>
+                <div className= 'edit-input-div'>
                 <input id='Name'
-                  className='input-field'
+                  className='edit-input-field'
                   onChange={this.update("full_name")}
                   value={this.state.full_name}/>
-                  <div className='username-dummy'/>
-               </div>
-              <div className='username'>
-              <label id='Username'>Username</label>
+                </div>
+                <div className= 'edit-input-div'>
                 <input id='Username'
-                  className='input-field'
+                  className='edit-input-field'
                   onChange={this.update("username")}
                   value={this.state.username}
                   placeholder='Username'/>
-                  <div className='username-dummy'/>
-               </div>
-               <div className='bio'>
-               <label id='Bio'>Bio</label>
+                </div>
+                <div className= 'edit-input-div'>
                 <textarea id = 'Bio'
-                  className='text-field'
+                  className='edit-text-area'
                   onChange={this.update("bio")}
                   value={this.state.bio}
                   type="password" />
-                  <div className='bio-dummy'/>
+                </div>
+                  <span className='edit-buttonspan'>
+                  <button className='button'>Submit</button>
+                  </span>
+                  </div>
                </div>
-              <span className='buttonspan'>
-                <button className='button'>Submit</button>
-              </span>
               {this.errorText()}
             </form>
            </div>
           </div>
+        </div>
         </div>
       </article>
     );

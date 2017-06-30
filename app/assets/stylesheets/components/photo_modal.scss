@@ -1,0 +1,84 @@
+.photo-modal-wrap{
+  max-width: 935px;
+  max-height: 600px;
+  display: flex;
+  flex-direction: row;
+}
+
+.photo-modal-image{
+  max-width: 600px;
+  max-height: 600px;
+  image-rendering: auto;
+}
+
+
+.photo-modal-right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  width: 285px;
+  padding: 0px  25px;
+}
+
+.photo-modal-header{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  border-bottom: 1px solid #efefef;
+  height: 40px;
+  margin-right: 0;
+  padding: 20px 0;
+  top: 0;
+  width: 287px;
+}
+
+.photo-modal-user-div{
+  display: flex;
+  flex-direction: row;
+}
+.photo-modal-avatar-image{
+  image-rendering: auto;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.photo-modal-author-name{
+  font-size: 15px;
+  font-weight: bold;
+  padding-top: 5px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color: black;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 12px;
+}
+
+.photo-modal-right-bottom{
+  border-top: 1px solid #efefef;
+  padding-top: 10px;
+}
+
+.photo-modal-comment-list-ul{
+  padding-left: 0;
+  overflow: visible;
+}
+
+.comment-form-delete-button{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.comment-form-body{
+  width: 245px;
+}
+
+.delete-button{
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}

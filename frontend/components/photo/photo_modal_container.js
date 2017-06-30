@@ -20,7 +20,7 @@ const mapDispatchToProps = dipatch => {
     requestPhoto: (id) => dispatch(requestPhoto(id)),
     deletePhoto: (id) => dispatch(deletePhoto(id)),
     closeModal: () => dispatch(closeModal()),
-    getUser: (id) => dispatch(getUser(id))
+    getUser: (id) => dispatch(getUser(id)),
   });
 };
 
