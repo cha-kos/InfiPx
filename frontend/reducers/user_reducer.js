@@ -9,8 +9,8 @@ const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case RECEIVE_USER:
       let result = merge({}, state, action.user);
-      debugger
       
+
       return result;
     // case RESET_USER:
     //     let newState = state;

@@ -57,7 +57,7 @@ componentWillUnmount(){
     // return(
     //   <img src={this.state.photo.image_url} />
     // );
-    debugger
+  
     return (
       <div>
       <Header/>

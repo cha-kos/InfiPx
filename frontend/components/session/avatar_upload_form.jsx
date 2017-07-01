@@ -117,6 +117,7 @@ render(){
 
   ];
 
+
   return(
   <div className='uploadModal' onClick={(e)=> e.stopPropagation()}>
     { this.state.imageUrl ?

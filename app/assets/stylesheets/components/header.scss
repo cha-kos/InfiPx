@@ -56,26 +56,10 @@
 .left-nav-link{
   display: flex;
   text-decoration: none;
-  // flex-direction: column;
-  // background-size: 401px 355px;
-  // background-position: -176px 0;
-  // height: 35px;
-  // width: 176px;
-  // display: block;
-  // overflow: hidden;
-  // text-indent: 110%;
-  // white-space: nowrap;
-}
-
-.search-wrap{
-  // flex: 0 1 auto;
-  // min-width: 125px;
-  // width: 215px;
-  // height: 28px;
-  // display: flex;
-  // flex-direction: column;
 
 }
+
+
 
 .search-wrap button{
   font-weight: bold;
@@ -84,9 +68,6 @@
   cursor: pointer;
   background: #FBFBFB;
   font-weight: lighter;
-  // background: #3897f0;
-  // border-color: #3897f0;
-  // color: #fff;
   border-radius: 3px;
   border-style: solid;
   border-width: 1px;
@@ -198,6 +179,10 @@
   display: flex;
   align-items: stretch;
   box-sizing: border-box;
+}
+
+.compass-icon-div{
+  cursor: pointer;
 }
 
 .heart-icon-div{

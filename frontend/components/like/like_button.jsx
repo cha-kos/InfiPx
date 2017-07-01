@@ -35,7 +35,7 @@ class LikeButton extends React.Component {
 
   handleLike(e) {
     e.preventDefault();
-    this.props.createLike(this.state);
+    this.props.createLike({photo_id: this.props.photoId});
   }
 
   handleUnLike(e) {
@@ -74,7 +74,7 @@ export default LikeButton;
 // </form>
 
 // if (this.state.liked === false){
-// 
+//
 //   return (
 //     <button className='heart-icon-container' onClick={this.handleLike} >
 //       <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">

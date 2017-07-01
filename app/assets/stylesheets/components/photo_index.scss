@@ -32,7 +32,6 @@
   list-style: none;
   margin-bottom: 60px;
   background-color: #fff;
-  border: 1px solid #e6e6e6;
   padding: 0;
   align-items: stretch;
   display: flex;
@@ -45,7 +44,7 @@
 }
 
 .photo-item-header{
-  border-bottom: 1px solid #efefef;
+  border: 1px solid #efefef;
   align-items: center;
   flex-direction: row;
   height: 60px;
@@ -100,6 +99,9 @@
 
 
 .like-comments-container{
+  border-bottom: 1px solid #efefef;
+  border-left: 1px solid #efefef;
+  border-right: 1px solid #efefef;
   padding: 0 16px;
   display: flex;
   flex-direction: column;

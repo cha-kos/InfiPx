@@ -42,6 +42,23 @@ class User extends React.Component {
    }
   }
 
+  avatar() {
+    if (this.props.currentUser.id === this.props.user.id){
+      return (<div className='avatar-div'
+                onClick={() => {
+                this.props.openModal(<AvatarUploadForm
+                id={this.props.currentUser.id}
+                username={this.props.currentUser.username}/>);}}>
+                <img src={this.props.user.avatar_url} />
+              </div>
+      );
+    } else {
+      return (  <div className='avatar-div'>
+            <img src={this.props.user.avatar_url} />
+          </div>);
+    }
+  }
+
   postCount() {
     if (!this.props.user.photos){
       return 0;
@@ -64,12 +81,7 @@ class User extends React.Component {
           <div className='user-show-div'>
             <header className='user-show-header'>
               <div className='user-show-header-div'>
-              <div className='avatar-div'
-              onClick={() => this.props.openModal(<AvatarUploadForm
-                id={this.props.currentUser.id}
-                username={this.props.currentUser.username}/>)}>
-                <img src={this.props.user.avatar_url} />
-              </div>
+              {this.avatar()}
               <div className= 'info-div'>
                 <div className = 'username-and-button'>
                   <h1 className='username'>{this.props.user.username}</h1>
