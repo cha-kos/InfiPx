@@ -29,7 +29,6 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'time_ago_in_words'
 
-gem 'pry-rails'
 
 gem "paperclip", "~> 5.0.0"
 # Use Unicorn as the app server
@@ -39,14 +38,15 @@ gem "paperclip", "~> 5.0.0"
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'pry-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'web-console', '~> 2.0'
   gem 'byebug'
+  gem 'spring'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
 end

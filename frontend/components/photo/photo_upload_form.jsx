@@ -105,7 +105,7 @@ render(){
       </div>
     </div>,
     <span className="upload-modal-terms">
-      By posting a photo, you agree to giving me your social security number.
+      By posting a photo, you agree to InfiPx terms and policy.
     </span>
 
   ];
