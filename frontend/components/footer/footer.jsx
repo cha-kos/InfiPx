@@ -8,9 +8,9 @@ class Footer extends React.Component {
         <div className='footer-div'>
           <nav className='footer-nav'>
             <ul className='footer-ul'>
-              <li><Link to='/' >Portfolio</Link></li>
-              <li><Link to='/' >Github</Link></li>
-              <li><Link to='/' >Contact</Link></li>
+              <li><a href='http://chrishakos.com' >Portfolio</a></li>
+              <li><a href='https://github.com/chrishakos' >Github</a></li>
+              <li><a href="mailto:chrishakos@gmail.com">Contact</a></li>
             </ul>
             <span className="footer-span">© 2017 InfiPx</span>
           </nav>

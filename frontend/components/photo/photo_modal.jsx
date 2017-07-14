@@ -36,7 +36,7 @@ class PhotoModal extends React.Component{
       return (
         <button title='delete photo' className='delete-button' onClick={() => this.props.deletePhoto(this.props.photo.id)
           .then(()=>this.props.getUser(this.props.currentUserId))
-          .then(()=>this.props.closeModal())}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="black" stroke="#000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+          .then(()=>this.props.closeModal())}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="black" stroke="#000" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
     <circle cx="12" cy="12" r="2"/>
     <circle cx="20" cy="12" r="2"/>
     <circle cx="4" cy="12" r="2"/>

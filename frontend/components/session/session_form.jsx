@@ -103,7 +103,7 @@ class SessionForm extends React.Component {
                 </div>
               <span className='option-login'>
                 <button className='option-login-button' onClick = {() => this.setState({username: 'charles', password: 'charles'})}>
-                  <span className='option-login-text'><i className="fa fa-facebook-official fa-lg" aria-hidden="true">
+                  <span className='option-login-text'><i>
                   </i> Log in with Demo Account</span>
                 </button>
               </span>
