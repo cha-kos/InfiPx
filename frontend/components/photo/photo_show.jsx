@@ -18,9 +18,9 @@ class PhotoShow extends React.Component{
   }
 }
 
-componentWillUnmount(){
-  this.props.photo = {};
-}
+// componentWillUnmount(){
+//   this.props.photo = {};
+// }
 
 
   commentList (photo){

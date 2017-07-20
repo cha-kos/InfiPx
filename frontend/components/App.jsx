@@ -19,10 +19,10 @@ const App = () => {
           <ProtectedRoute path='/' component={PhotoIndex}/>
           <AuthRoute path="/login" component={SessionForm} />
           <AuthRoute path="/signup" component={SessionForm} />
-          <Route exact path='/users/:id' component={UserShow} />
-          <Route exact path='/users/:id/edit' component={SessionUserEditForm} />
+          <ProtectedRoute exact path='/users/:id' component={UserShow} />
+          <ProtectedRoute exact path='/users/:id/edit' component={SessionUserEditForm} />
 
-          <Route exact path='/photos/:id' component={PhotoShow} />
+          <ProtectedRoute exact path='/photos/:id' component={PhotoShow} />
 
 
       <Footer/>

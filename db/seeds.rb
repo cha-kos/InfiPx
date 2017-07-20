@@ -17,7 +17,6 @@ u6 = User.create({ username: "Pope", password: "charles", avatar: File.open('app
 
 Photo.destroy_all
 
-p1 = Photo.create({user_id: u1.id, username: u1.username, caption: 'pittttteeeedddd', image: File.open('app/assets/images/barreled.png')})
 p2 = Photo.create({user_id: u2.id, username: u2.username, caption: 'wheres his head?', image: File.open('app/assets/images/air.png')})
 p3 = Photo.create({user_id: u3.id, username: u3.username, caption: 'watch out for the choppa', image: File.open('app/assets/images/copterflip.png')})
 p4 = Photo.create({user_id: u6.id, username: u6.username, caption: 'yikes', image: File.open('app/assets/images/gaptorail.png')})
@@ -30,20 +29,24 @@ p10 = Photo.create({user_id: u1.id, username: u1.username, caption: 'that boy on
 p11 = Photo.create({user_id: u1.id, username: u1.username, caption: 'where I want to be', image: File.open('app/assets/images/wave.png')})
 p12 = Photo.create({user_id: u1.id, username: u1.username, caption: 'that snow is red', image: File.open('app/assets/images/sunsetspinetransfer.png')})
 p13 = Photo.create({user_id: u1.id, username: u1.username, caption: 'NYC YO!', image: File.open('app/assets/images/cityscape.png')})
-p14 = Photo.create({user_id: u4.id, username: u4.username, caption: 'is he going to land in the water?', image: File.open('app/assets/images/hugemthod.png')})
 p15 = Photo.create({user_id: u2.id, username: u2.username, image: File.open('app/assets/images/photographer.png')})
 p16 = Photo.create({user_id: u2.id, username: u2.username, caption: 'looks warm', image: File.open('app/assets/images/coldwave.png')})
 p17 = Photo.create({user_id: u2.id, username: u2.username, caption: 'he is destructing property!', image: File.open('app/assets/images/marbletail.png')})
 p18 = Photo.create({user_id: u2.id, username: u2.username, caption: 'pity the fool!', image: File.open('app/assets/images/tailslide.png')})
 p19 = Photo.create({user_id: u2.id, username: u2.username, caption: 'mrrrka', image: File.open('app/assets/images/smithgrind.png')})
-p19 = Photo.create({user_id: u2.id, username: u2.username, caption: 'look at those colors', image: File.open('app/assets/images/rainbowrail.png')})
+p20 = Photo.create({user_id: u2.id, username: u2.username, caption: 'look at those colors', image: File.open('app/assets/images/rainbowrail.png')})
+p21 = Photo.create({user_id: u3.id, username: u3.username, caption: 'woah swirly light', image: File.open('app/assets/images/SwirlLight.png')})
+p1 = Photo.create({user_id: u1.id, username: u1.username, caption: 'pittttteeeedddd', image: File.open('app/assets/images/barreled.png')})
+p22 = Photo.create({user_id: u3.id, username: u3.username, caption: 'I would live there', image: File.open('app/assets/images/TownOnWater.png')})
+p14 = Photo.create({user_id: u4.id, username: u4.username, caption: 'is he going to land in the water?', image: File.open('app/assets/images/hugemthod.png')})
+p24 = Photo.create({user_id: u3.id, username: u3.username, caption: 'Thats a bridge', image: File.open('app/assets/images/ManhattanBridge.png')})
 
 Comment.destroy_all
 
-c1 = Comment.create({user_id: u2.id, photo_id: p1.id, body: 'who eat yo breakfast', username: User.find(u2.id).username })
-c2 = Comment.create({user_id: u1.id, photo_id: p2.id, body: 'who eat yo breakfast', username: User.find(u1.id).username })
-c3 = Comment.create({user_id: u4.id, photo_id: p3.id, body: 'who eat yo breakfast', username: User.find(u4.id).username })
-c4 = Comment.create({user_id: u3.id, photo_id: p4.id, body: 'who eat yo breakfast', username: User.find(u3.id).username })
+c1 = Comment.create({user_id: u2.id, photo_id: p1.id, body: 'nice', username: User.find(u2.id).username })
+c2 = Comment.create({user_id: u1.id, photo_id: p2.id, body: 'cool', username: User.find(u1.id).username })
+c3 = Comment.create({user_id: u4.id, photo_id: p3.id, body: 'what a great day for a good day', username: User.find(u4.id).username })
+c4 = Comment.create({user_id: u3.id, photo_id: p4.id, body: 'wow', username: User.find(u3.id).username })
 c5 = Comment.create({user_id: u2.id, photo_id: p1.id, body: 'you took my heart', username: User.find(u2.id).username })
 
 Like.destroy_all

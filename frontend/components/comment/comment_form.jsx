@@ -28,11 +28,12 @@ class CommentForm extends React.Component {
   }
 
   render(){
+
     return(
       <section className='comment-form-container'>
         <form  onSubmit={this.handleSubmit} className='comment-form'>
           <div className='body'>
-            <input id="comment-field"
+            <input id={`comment-${this.state.photo_id}`}
               className="comment-form-body"
               placeholder='Add a comment...'
               type="text"
