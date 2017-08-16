@@ -10,9 +10,3 @@ json.username photo.username
 json.viewer_liked photo.current_user_liked(current_user)
 json.viewer_like_id photo.current_user_like_id(current_user)
 json.time_ago time_ago_in_words(photo.created_at) + ' ago'
-
-# do
-#    @photo.likes do |like|
-#     like.user_id
-#   end
-# end

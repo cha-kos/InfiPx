@@ -99,6 +99,5 @@ class User < ApplicationRecord
       .where("follows.follower_id = #{self.id} OR photos.user_id = #{self.id}")
       .order("photos.created_at DESC")
       .limit(15)
-
   end
 end
