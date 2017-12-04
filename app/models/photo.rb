@@ -1,5 +1,3 @@
-
-
 class Photo < ActiveRecord::Base
   validates :user_id, :image, presence: true
 

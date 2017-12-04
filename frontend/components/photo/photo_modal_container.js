@@ -7,7 +7,6 @@ import {closeModal} from '../../actions/modal_actions';
 import { getUser } from '../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  // dispatch(requestPhoto(ownProps.id))
   if (state.session.currentUser){
   return({
     photo: state.photos[ownProps.id],

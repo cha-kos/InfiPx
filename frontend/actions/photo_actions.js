@@ -28,11 +28,6 @@ export const uploadPhoto = (photo) => (dispatch) => {
     .then(photo => dispatch(receivePhoto(photo))));
 };
 
-// export const updatePhoto = (id) => (dispatch) => {
-//   return (APIUtil.updatePhoto(id)
-//     .then(photo => dispatch(receivePhoto(photo))));
-// };
-
 export const createComment = (comment) => (dispatch) => {
   return (APIUtil.addComment(comment)
     .then(photo => dispatch(receivePhoto(photo))));

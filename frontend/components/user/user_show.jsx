@@ -43,13 +43,18 @@ class User extends React.Component {
   }
 
   avatar() {
+    let styles = {
+      cursor: 'pointer'
+    };
     if (this.props.currentUser.id === this.props.user.id){
       return (<div className='avatar-div'
                 onClick={() => {
                 this.props.openModal(<AvatarUploadForm
                 id={this.props.currentUser.id}
-                username={this.props.currentUser.username}/>);}}>
-                <img src={this.props.user.avatar_url} />
+                username={this.props.currentUser.username}
+                />);}}>
+                <img src={this.props.user.avatar_url}
+                style={styles}/>
               </div>
       );
     } else {

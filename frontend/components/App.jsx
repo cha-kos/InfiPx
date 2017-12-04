@@ -21,7 +21,6 @@ const App = () => {
           <AuthRoute path="/signup" component={SessionForm} />
           <ProtectedRoute exact path='/users/:id' component={UserShow} />
           <ProtectedRoute exact path='/users/:id/edit' component={SessionUserEditForm} />
-
           <ProtectedRoute exact path='/photos/:id' component={PhotoShow} />
 
 
@@ -30,4 +29,3 @@ const App = () => {
 );};
 
 export default withRouter(App);
-// <Route exact path="/" component={SessionFormContainer} />

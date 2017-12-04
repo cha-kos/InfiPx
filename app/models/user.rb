@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :likes
   has_many :photos
   has_many :comments
+  has_many :phone_numbers
 
   has_many :followers,
   class_name: :Follow,
@@ -18,6 +19,7 @@ class User < ApplicationRecord
   class_name: :Follow,
   foreign_key: :follower_id,
   primary_key: :id
+
 
 
   has_attached_file :avatar, default_url: "empty_avatar.png"

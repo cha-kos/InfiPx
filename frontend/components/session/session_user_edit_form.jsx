@@ -114,23 +114,5 @@ class SessionForm extends React.Component {
 }
 
 
-//
-// linkToggle () {
-//   if (this.props.formType === 'login'){
-//     return (
-//       <p>Don't have an account? <Link
-//       className ='link-toggle-link'
-//       onClick={this.props.clearErrors}
-//       to="/signup">Sign Up</Link></p>
-//     );
-//   } else {
-//     return (
-//       <p>Have an account? <Link
-//       className='link-toggle-link'
-//       onClick={this.props.clearErrors}
-//       to="/login">Log In</Link></p>
-//     );
-//   }
-// }
 
 export default SessionForm;

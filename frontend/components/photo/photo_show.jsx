@@ -9,19 +9,11 @@ import Header from '../header/header_container';
 
 class PhotoShow extends React.Component{
 
-
-
-
   componentDidMount(){
     if (!this.props.photo){
     this.props.requestPhoto(this.props.match.params.id);
   }
 }
-
-// componentWillUnmount(){
-//   this.props.photo = {};
-// }
-
 
   commentList (photo){
     return (
@@ -54,9 +46,6 @@ class PhotoShow extends React.Component{
     if (!this.props.photo){
       return null;
     }
-    // return(
-    //   <img src={this.state.photo.image_url} />
-    // );
 
     return (
       <div>
