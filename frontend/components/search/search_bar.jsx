@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom';
 
 
-class CommentForm extends React.Component {
+class SearchBar extends React.Component {
 
   constructor(props){
     super(props);
@@ -46,4 +46,4 @@ class CommentForm extends React.Component {
   }
 }
 
-export default CommentForm;
+export default SearchBar;

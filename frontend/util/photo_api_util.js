@@ -20,7 +20,6 @@ export const addPhoto = (formData) => {
     contentType: false,
     processData: false,
     data: formData,
-    // success: () => callback()
   });
 };
 
