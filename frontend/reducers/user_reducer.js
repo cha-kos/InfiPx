@@ -10,10 +10,6 @@ const userReducer = (state = initialState, action) => {
     case RECEIVE_USER:
       let result = merge({}, state, action.user);
       return result;
-    // case RESET_USER:
-    //     let newState = state;
-    //     newState.user[action.user.id] = action.user;
-    //     return newState;
     default:
       return state;
 

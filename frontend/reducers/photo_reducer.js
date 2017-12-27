@@ -10,11 +10,10 @@ import {
 const initialState = {};
 
 const photoReducer = (state = initialState, action) => {
-  // Object.freeze(state);
   let newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_ALL_PHOTOS:
-  
+
       return merge({}, action.photos);
     case RECEIVE_PHOTO:
       newState[action.photo.id] = action.photo;
@@ -22,9 +21,6 @@ const photoReducer = (state = initialState, action) => {
     case REMOVE_PHOTO:
       delete newState[action.photo.id];
       return newState;
-    // case RECEIVE_USER:
-    // photo = merge({}, state, action.user.photos);
-    // return photo;
     case REMOVE_COMMENT:
     Object.assign(newState[action.photo.id], action.photo);
     return newState;
