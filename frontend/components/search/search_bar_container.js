@@ -6,7 +6,8 @@ import { connect } from 'react-redux';
 const mapStateToProps = (state) => {
 
   return({
-    photos: selectAllPhotos(state.photos),
+    // ????
+    searchQuery: state.session.searchQuery,
     currentUser: state.session.currentUser,
   });
 };
@@ -14,8 +15,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dipatch => {
 
   return({
-    requestAllPhotos: () => dispatch(requestAllPhotos()),
-    deleteComment: (comment) => dispatch(deleteComment(comment))
+    // need to write function below
+    requestUsers: (query) => dispatch(requestUsers(query)),
   });
 };
 
