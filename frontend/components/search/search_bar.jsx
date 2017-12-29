@@ -3,46 +3,73 @@ import { Route, Link } from 'react-router-dom';
 
 
 class SearchBar extends React.Component {
-
   constructor(props){
     super(props);
     this.state = {
-      body: this.props.body,
-      user_id: this.props.userId,
-      photo_id: this.props.photoId,
-      username: this.props.username
+      query: "",
+      result: []
     };
-
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    this.props.createComment(this.state).then(() => this.setState({
-      body: ''
-    }));
+  onChange(e){
+    return e => {
+      this.setState({value: e.target.value});
+    };
   }
 
-  update(property) {
-    return e => this.setState({ [property]: e.target.value });
+  update(){
+    return () => {
+      this.props.update(this.state);
+    };
+  }
+
+  handleKeyPress(e){
+    if (e && e.key === "Enter"){
+      this.setState({editing: false}, this.update());
+    }
+  }
+
+  autoFocus(){
+    this.nameInput.selectionStart = this.nameInput.selectionEnd = this.nameInput.value.length;
+    this.nameInput.focus();
   }
 
   render(){
-
-    return(
-      <section className='comment-form-container'>
-        <form  onSubmit={this.handleSubmit} className='comment-form'>
-          <div className='body'>
-            <input id={`comment-${this.state.photo_id}`}
-              className="comment-form-body"
-              placeholder='Add a comment...'
-              type="text"
-              value={this.state.body}
-              onChange={this.update("body")}/>
+    if (this.state.editing === true){
+      return (
+        <div className={`${this.state.className}-body input-body`}>
+          <input
+            className={this.state.className}
+            placeholder=''
+            type="text"
+            value={this.state.value}
+            onChange={this.onChange()}
+            onKeyPress={(e) => this.handleKeyPress(e)}
+            ref={(input) => { this.nameInput = input; }}
+          />
+          <button onClick={() => this.setState({editing: false}, this.update())}>
+            <SaveIcon/>
+          </button>
+        </div>
+      );
+    } else {
+      return (
+        <div className={`${this.state.className}-body input-body`}>
+          <div
+            className={`${this.state.className} input-display`}
+            placeholder=''
+            type="text"
+            value={this.state.value}
+            onChange={this.onChange()}
+            onClick={() => this.setState({editing: true}, () => this.autoFocus())}
+          >{this.state.value}
           </div>
-        </form>
-      </section>
-    );
+          <button onClick={() => this.setState({editing: true}, () => this.autoFocus())}>
+            <EditIcon/>
+          </button>
+        </div>
+      );
+    }
   }
 }
 
