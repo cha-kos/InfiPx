@@ -8,7 +8,8 @@ const rootReducer = combineReducers({
   session: sessionReducer,
   photos: photoReducer,
   user: userReducer,
-  modal: modalReducer
+  modal: modalReducer,
+  searchBar: searchReducer
 });
 
 export default rootReducer;
