@@ -1,15 +1,13 @@
 import React from 'react';
-import EditIcon from './edit_icon'
 import { connect } from 'react-redux';
-// import SearchBar from './search_bar';
-// import { QueryUsers } from '../../actions/photo_actions';
+import { searchUsers } from '../../actions/search_actions';
+import SearchBar from './search_bar';
 
 const mapStateToProps = (state) => {
 
   return({
     // ????
-    searchQuery: state.session.searchQuery,
-    currentUser: state.session.currentUser,
+    result: state.result,
   });
 };
 
@@ -17,11 +15,11 @@ const mapDispatchToProps = dipatch => {
 
   return({
     // need to write function below
-    requestUsers: (query) => dispatch(requestUsers(query)),
+    searchUsers: (query) => dispatch(searchUsers(query)),
   });
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(PhotoIndex);
+)(SearchBar);

@@ -44,7 +44,7 @@ class SearchBar extends React.Component {
                onChange = {this.onChange()}
                type="text"
                name="search"/>
-        <div id="search-cover" className="search-cover"><span id="search-cover-span">Search artists and categories</span></div>
+        <div id="search-cover" className="search-cover"><span id="search-cover-span">Search</span></div>
       </div>
     );
   }
