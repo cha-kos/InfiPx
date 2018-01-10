@@ -13,7 +13,7 @@ class SearchBar extends React.Component {
 
   onChange(e){
     return e => {
-      this.setState({value: e.target.value});
+      this.setState({query: e.target.value});
     };
   }
 
@@ -23,53 +23,30 @@ class SearchBar extends React.Component {
     };
   }
 
-  handleKeyPress(e){
-    if (e && e.key === "Enter"){
-      this.setState({editing: false}, this.update());
-    }
-  }
+  // handleKeyPress(e){
+  //   if (e && e.key === "Enter"){
+  //     this.setState({editing: false}, this.update());
+  //   }
+  // }
 
-  autoFocus(){
-    this.nameInput.selectionStart = this.nameInput.selectionEnd = this.nameInput.value.length;
-    this.nameInput.focus();
-  }
+  // autoFocus(){
+  //   this.nameInput.selectionStart = this.nameInput.selectionEnd = this.nameInput.value.length;
+  //   this.nameInput.focus();
+  // }
 
   render(){
-    if (this.state.editing === true){
-      return (
-        <div className={`${this.state.className}-body input-body`}>
-          <input
-            className={this.state.className}
-            placeholder=''
-            type="text"
-            value={this.state.value}
-            onChange={this.onChange()}
-            onKeyPress={(e) => this.handleKeyPress(e)}
-            ref={(input) => { this.nameInput = input; }}
-          />
-          <button onClick={() => this.setState({editing: false}, this.update())}>
-            <SaveIcon/>
-          </button>
-        </div>
-      );
-    } else {
-      return (
-        <div className={`${this.state.className}-body input-body`}>
-          <div
-            className={`${this.state.className} input-display`}
-            placeholder=''
-            type="text"
-            value={this.state.value}
-            onChange={this.onChange()}
-            onClick={() => this.setState({editing: true}, () => this.autoFocus())}
-          >{this.state.value}
-          </div>
-          <button onClick={() => this.setState({editing: true}, () => this.autoFocus())}>
-            <EditIcon/>
-          </button>
-        </div>
-      );
-    }
+    return (
+      <div className="search-container">
+        <svg id='search-icon' xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input id="search-input"
+               className="search-input"
+               value = {this.state.query}
+               onChange = {this.onChange()}
+               type="text"
+               name="search"/>
+        <div id="search-cover" className="search-cover"><span id="search-cover-span">Search artists and categories</span></div>
+      </div>
+    );
   }
 }
 

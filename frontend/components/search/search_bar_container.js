@@ -1,4 +1,5 @@
 import React from 'react';
+import EditIcon from './edit_icon'
 import { connect } from 'react-redux';
 // import SearchBar from './search_bar';
 // import { QueryUsers } from '../../actions/photo_actions';

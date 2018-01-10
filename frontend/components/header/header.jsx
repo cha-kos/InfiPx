@@ -1,15 +1,11 @@
 import React from 'react';
 import { Link }  from 'react-router-dom';
-
 import PhotoIndex from '../photo/photo_index_container';
 import Footer from '../footer/footer';
 import PhotoUploadForm from '../photo/photo_upload_container';
+import SearchBar from '../search/search_bar';
 
-// const Header = function({currentUser, logout}) {
 class Header extends React.Component {
-  // function greet() {
-  //   return `What does it! ${currentUser ? `, ${currentUser.username}` : '' }!`;
-  // }
 
   rightNavShow () {
     if (this.props.currentUser) {
@@ -52,7 +48,6 @@ class Header extends React.Component {
     }
   }
 
-  // userPath() {return `/users/${currentUser.id}`;}
 
   render (){
     return (
@@ -71,11 +66,7 @@ class Header extends React.Component {
           <div className="left-nav-text">InfiPx</div>
         </Link>
         </div>
-        <section className="search-wrap">
-          <button onClick={this.props.logout}>
-            Logout
-          </button>
-        </section>
+          <SearchBar/>
         {this.rightNavShow()}
       </div>
     </div>
@@ -84,28 +75,3 @@ class Header extends React.Component {
 }
 
 export default Header;
-
-// <header className="my-header">
-// <Link to="/feed">{greet()}</Link>
-// <Link to="/">InfiPx</Link>
-// <img src={currentUser.avatar_url}/>
-// {thingsToShow()}
-// </header>
-
-// <div className='search-wrap'>
-//   <input type="text" className="search_input" placeholder="Search"/>
-// </div>
-
-//
-// <div className="search-mask">
-//   <div className="search-mask-content">
-//     <span className="search-mask-icon">
-//       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-//           <circle cx="10.5" cy="10.5" r="7.5"/>
-//           <line x1="21" y1="21" x2="15.8" y2="15.8"/>
-//       </svg>
-//     </span>
-//     <span className="search-mask-text">Search
-//     </span>
-//   </div>
-// </div>

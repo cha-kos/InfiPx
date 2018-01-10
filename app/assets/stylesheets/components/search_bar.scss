@@ -1,0 +1,46 @@
+.search-container{
+  display: flex;
+  padding-left: 40px;
+}
+
+.feather-search{
+  z-index: 2;
+  position: absolute;
+  padding-top: 7px;
+  padding-left: 7px;
+}
+
+.search-input{
+  font-size: 14px;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  padding-left: 30px;
+  outline: none;
+  height: 30px;
+  width: 267px;
+  background: transparent;
+}
+
+.search-input:focus ~ .search-cover{
+  display: none;
+}
+
+.search-cover{
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-weight: 200;
+  color: gray;
+  border-radius: 3px;
+  padding-left: 20px;
+  height: 30px;
+  width: 247px;
+  position: absolute;
+  background: #f2f1f1;
+  cursor: text;
+}
+
+.search-cover span{
+  position: absolute;
+  font-size: 14px;
+  padding-top: 8px;
+  padding-left: 10px;
+}

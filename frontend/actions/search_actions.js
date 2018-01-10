@@ -7,7 +7,7 @@ export const searchUsers = (query) => (dispatch) => {
   ));
 };
 
-export const receiveSearchResult = (result) {
+export const receiveSearchResult = (result) => {
   return {
     type: RECEIVE_SEARCH_RESULT,
     result: result
