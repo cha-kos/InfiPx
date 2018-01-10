@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/session_api_util';
+import * as APIUtil from '../util/search_api_util';
 export const RECEIVE_SEARCH_RESULT = "RECEIVE_SEARCH_RESULT";
 
 export const searchUsers = (query) => (dispatch) => {

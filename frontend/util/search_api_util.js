@@ -1,8 +1,7 @@
 export const searchUsers = ( query ) => {
-
   return $.ajax({
     method: 'GET',
-    url: `/api/users/search`,
+    url: `/api/search`,
     data: {query: query},
   });
 };

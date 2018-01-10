@@ -4,7 +4,6 @@ import { searchUsers } from '../../actions/search_actions';
 import SearchBar from './search_bar';
 
 const mapStateToProps = (state) => {
-
   return({
     // ????
     result: state.result,
@@ -12,9 +11,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = dipatch => {
-
   return({
-    // need to write function below
     searchUsers: (query) => dispatch(searchUsers(query)),
   });
 };

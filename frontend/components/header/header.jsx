@@ -3,7 +3,7 @@ import { Link }  from 'react-router-dom';
 import PhotoIndex from '../photo/photo_index_container';
 import Footer from '../footer/footer';
 import PhotoUploadForm from '../photo/photo_upload_container';
-import SearchBar from '../search/search_bar';
+import SearchBar from '../search/search_bar_container';
 
 class Header extends React.Component {
 

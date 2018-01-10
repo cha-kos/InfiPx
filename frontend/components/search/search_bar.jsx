@@ -13,7 +13,8 @@ class SearchBar extends React.Component {
 
   onChange(e){
     return e => {
-      this.setState({query: e.target.value});
+      this.setState({query: e.target.value},
+        () => this.props.searchUsers(this.state.query));
     };
   }
 

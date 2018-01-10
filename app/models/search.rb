@@ -1,4 +1,6 @@
 class Search < ActiveRecord::Base
-  def search_users(query)
+  def self.search_users(query)
+    User.select(:avatar, :username, :name)
+      .where("username = %?")
   end
 end
