@@ -27,20 +27,4 @@ class Api::LikesController < ApplicationController
     def like_params
       params.require(:like).permit(:photo_id)
     end
-
 end
-
-
-
-
-
-
-# def current_like
-#   @current_like ||= Like.find(params[:id])
-# end
-#
-# def require_like_owner!
-#   unless current_like.user_id == current_user.id
-#     render json: ["You must be the Like's owner to do that"], status: :unauthorized
-#   end
-# end

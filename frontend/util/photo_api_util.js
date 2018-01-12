@@ -12,7 +12,6 @@ export const getPhoto = (id) => {
   });
 };
 
-
 export const addPhoto = (formData) => {
   return $.ajax({
     method: 'POST',

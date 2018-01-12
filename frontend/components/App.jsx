@@ -14,17 +14,14 @@ const App = () => {
 
   return (
   <div>
-        <Modal/>
-
-          <ProtectedRoute path='/' component={PhotoIndex}/>
-          <AuthRoute path="/login" component={SessionForm} />
-          <AuthRoute path="/signup" component={SessionForm} />
-          <ProtectedRoute exact path='/users/:id' component={UserShow} />
-          <ProtectedRoute exact path='/users/:id/edit' component={SessionUserEditForm} />
-          <ProtectedRoute exact path='/photos/:id' component={PhotoShow} />
-
-
-      <Footer/>
+    <Modal/>
+      <ProtectedRoute path='/' component={PhotoIndex}/>
+      <AuthRoute path="/login" component={SessionForm} />
+      <AuthRoute path="/signup" component={SessionForm} />
+      <ProtectedRoute exact path='/users/:id' component={UserShow} />
+      <ProtectedRoute exact path='/users/:id/edit' component={SessionUserEditForm} />
+      <ProtectedRoute exact path='/photos/:id' component={PhotoShow} />
+    <Footer/>
   </div>
 );};
 

@@ -6,12 +6,6 @@ import { getUser } from '../../actions/user_actions';
 
 
 const mapStateToProps = function (state, ownProps) {
-  //  if (state.session.errors.responseJSON)  {
-  //   errors = (state.session.errors.responseJSON);
-  //  } else {
-  //     errors = [];
-  //   }
-
   return {
     currentUser: state.session.currentUser,
     errors: [],

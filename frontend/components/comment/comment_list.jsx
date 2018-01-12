@@ -30,7 +30,6 @@ class CommentList extends React.Component {
   }
 
 
-
   handleClick(e) {
 
     this.props.deleteComment({id: this.props.comment.id, photo_id: this.props.photoId});
@@ -40,8 +39,8 @@ class CommentList extends React.Component {
         return(
           <li className='comment-list-item'>
             <div className='comment-div'>
-            <Link to={`/users/${this.props.comment.user_id}`} className='comment-user-name'>{this.props.comment.username}</Link>
-            <span className='comment-body'>{this.props.comment.body}</span>
+              <Link to={`/users/${this.props.comment.user_id}`} className='comment-user-name'>{this.props.comment.username}</Link>
+              <span className='comment-body'>{this.props.comment.body}</span>
             </div>
             {this.deleteButton()}
           </li>

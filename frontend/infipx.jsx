@@ -4,9 +4,6 @@ import Root from './components/root';
 import configureStore from './store/store';
 import { requestPhoto, removePhoto } from './actions/photo_actions';
 
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
   let store;
   if (window.currentUser) {

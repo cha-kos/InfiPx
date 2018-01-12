@@ -53,53 +53,28 @@ update(field) {
   imageData.append("user[avatar]",this.state.imageFile );
   imageData.append("user[id]",this.props.id);
   this.props.editUserAvatar(imageData)
-  .then( () => this.props.closeModal());
-  // .then(post => {
-  //   imageData.append("image[imageable_id]", post.id );
-  //   imageData.append("image[imageable_type]", 'Post' );
-  //   return (
-  //   this.props.uploadPhoto(imageData).then(
-  //     response => {
-  //       if (response.imageable_id) {
-  //         this.props.history.push(`/`).
-  //         then(
-  //           () => this.props.clearModal());
-    //     }
-    //   }
-    // )
-  // );});
+    .then( () => this.props.closeModal());
 }
 
-// <input type="file" id="global-files-button"
-//   onChange={this.updateFile} />
-
 render(){
-  const thingsToShow = [
+  const dropZone = [
     <div className='upload-actions'>
       <div className='drag-and-drop-text'>
-
-
-
-
         <div className='drag-and-drop-box'>
-
           <Dropzone
             onDrop={this.updateFile}
             onClick={() => console.log('hi')}
             className='drag-and-drop-box'>
               <div className= 'plus-symbol'>
               <svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 24 24" fill="none" stroke="#E8E8E8" strokeWidth="0.2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="12" y1="5" x2="12" y2="19"/>
-              <line x1="5" y1="12" x2="19" y2="12"/>
+                <line x1="12" y1="5" x2="12" y2="19"/>
+                <line x1="5" y1="12" x2="19" y2="12"/>
               </svg>
               </div>
               Drag Your Image Here
             </Dropzone>
-
-
         </div>
       </div>
-
       <div className='misc'>
       </div>
     </div>,
@@ -122,7 +97,7 @@ render(){
   <div className='uploadModal' onClick={(e)=> e.stopPropagation()}>
     { this.state.imageUrl ?
       gottenPhoto
-      :thingsToShow
+      :dropZone
     }
   </div>
 );

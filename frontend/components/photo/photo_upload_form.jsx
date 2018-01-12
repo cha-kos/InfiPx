@@ -42,48 +42,20 @@ update(field) {
 
 
  handleSubmit(e) {
-   e.preventDefault();
-
-
-
-  // let photoData = {photo: {
-  //   caption: this.state.caption,
-  // }};
+  e.preventDefault();
   let imageData = new FormData();
   imageData.append("photo[caption]",this.state.caption);
   imageData.append("photo[image]",this.state.imageFile );
   this.props.uploadPhoto(imageData)
-  .then( () => this.props.closeModal())
-  .then( () => this.props.history.push(`/`));
-  // .then(post => {
-  //   imageData.append("image[imageable_id]", post.id );
-  //   imageData.append("image[imageable_type]", 'Post' );
-  //   return (
-  //   this.props.uploadPhoto(imageData).then(
-  //     response => {
-  //       if (response.imageable_id) {
-  //         this.props.history.push(`/`).
-  //         then(
-  //           () => this.props.clearModal());
-    //     }
-    //   }
-    // )
-  // );});
+    .then( () => this.props.closeModal())
+    .then( () => this.props.history.push(`/`));
 }
 
-// <input type="file" id="global-files-button"
-//   onChange={this.updateFile} />
-
 render(){
-  const thingsToShow = [
+  const dropZone = [
     <div className='upload-actions'>
       <div className='drag-and-drop-text'>
-
-
-
-
         <div className='drag-and-drop-box'>
-
           <Dropzone
             onDrop={this.updateFile}
             onClick={() => console.log('hi')}
@@ -96,18 +68,14 @@ render(){
               </div>
               Drag Your Image Here
             </Dropzone>
-
-
         </div>
       </div>
-
       <div className='misc'>
       </div>
     </div>,
     <span className="upload-modal-terms">
       By posting a photo, you agree to InfiPx terms and policy.
     </span>
-
   ];
 
   const gottenPhoto = [
@@ -130,7 +98,7 @@ render(){
   <div className='uploadModal' onClick={(e)=> e.stopPropagation()}>
     { this.state.imageUrl ?
       gottenPhoto
-      :thingsToShow
+      :dropZone
     }
   </div>
 );

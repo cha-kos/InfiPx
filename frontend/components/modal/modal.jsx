@@ -7,9 +7,7 @@ class Modal extends React.Component {
   }
 
   render () {
-
     if(this.props.open) {
-
       return (
         <div className={open ? "modal-frame" : "modal-frame hidden"} onClick={ () => this.props.closeModal()}>
           <div className="modalContent">

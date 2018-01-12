@@ -7,8 +7,7 @@ const mapStateToProps = (state, ownProps) => {
     likeId: ownProps.likeId,
     liked: ownProps.liked,
     photoId: ownProps.photoId,
-    userId: state.session.currentUser.id,
-    // username: state.session.currentUser.username
+    userId: state.session.currentUser.id
   });
 };
 

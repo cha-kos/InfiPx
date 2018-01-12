@@ -17,34 +17,6 @@ class FollowButton extends React.Component {
     this.handleUnFollow = this.handleUnFollow.bind(this);
   }
 
-  buttonToggle(){
-    if (this.props.userId === this.props.viewerId){
-      return (
-        <div className='edit-button-cog'>
-          <section className='edit-button-wrap'>
-            <Link to={`/users/${this.props.viewerId}/edit`}><button className = 'edit-button'>Edit Profile</button></Link>
-          </section>
-          <button className='edit-cog-button' onClick={this.props.logout}>
-          <div className='edit-cog'>
-            <img src={window.images.cog_wheel}/>
-          </div>
-          </button>
-        </div>);
-    }
-    else if (this.props.viewerFollows === false){
-      return (
-        <section className='follow-button-wrap'>
-        <button onClick={this.handleFollow} className = 'follow-button'>Follow</button>
-        </section>
-      );
-    } else {
-      return(
-        <section className='edit-button-wrap'>
-        <button onClick={this.handleUnFollow} className = 'edit-button'>Following</button>
-        </section>
-      );
-    }
-  }
 
   handleFollow(e) {
     e.preventDefault();
@@ -62,6 +34,34 @@ class FollowButton extends React.Component {
     });
   }
 
+  buttonToggle(){
+    if (this.props.userId === this.props.viewerId){
+      return (
+        <div className='edit-button-cog'>
+        <section className='edit-button-wrap'>
+        <Link to={`/users/${this.props.viewerId}/edit`}><button className = 'edit-button'>Edit Profile</button></Link>
+        </section>
+        <button className='edit-cog-button' onClick={this.props.logout}>
+        <div className='edit-cog'>
+        <img src={window.images.cog_wheel}/>
+        </div>
+        </button>
+        </div>);
+      }
+      else if (this.props.viewerFollows === false){
+        return (
+          <section className='follow-button-wrap'>
+          <button onClick={this.handleFollow} className = 'follow-button'>Follow</button>
+          </section>
+        );
+      } else {
+        return(
+          <section className='edit-button-wrap'>
+          <button onClick={this.handleUnFollow} className = 'edit-button'>Following</button>
+          </section>
+        );
+      }
+    }
 
   render(){
     return(
