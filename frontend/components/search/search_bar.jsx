@@ -42,14 +42,17 @@ class SearchBar extends React.Component {
                className="search-input"
                value = {this.state.query}
                onChange = {this.onChange()}
+               ref={(input) => {this.searchInput = input;}}
                type="text"/>
-        <div id="search-cover" className="search-cover"><span id="search-cover-span">Search</span></div>
+        <div id="search-cover" className="search-cover" onClick={() => this.searchInput.focus()}><span id="search-cover-span">Search</span></div>
         <ul className="result-list">
           {
             this.props.result.map((result) => {
               return (
-                <li className='list-item'>
-                  <Link to={`/users/${result.id}`} className='list-item-link'>
+                <li className='result-item' onClick={() => {
+                  this.setState({query: "", result: []});
+                }}>
+                  <Link to={`/users/${result.id}`} className='result-item-link'>
                     <img className='avatar-image search-avatar' src={result.avatarUrl}/>
                     <div>{result.username}</div>
                     <div>{result.fullName}</div>

@@ -25,10 +25,12 @@
   display: none;
 }
 
+
 .search-cover{
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   font-weight: 200;
   color: gray;
+  border: 1px solid lightgray;
   border-radius: 3px;
   padding-left: 20px;
   height: 30px;
@@ -36,6 +38,7 @@
   position: absolute;
   background: #f2f1f1;
   cursor: text;
+  z-index: 2;
 }
 
 .search-cover span{
@@ -46,16 +49,36 @@
 }
 
 .result-list{
+  // display: none;
   position: absolute;
   padding-top: 20px;
   list-style: none;
 }
 
-.list-item-link{
+.search-input:focus ~ .result-list{
+  display: block;
+}
+
+// .result-item{
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-around;
+//   cursor: pointer;
+// }
+.result-item-link{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   cursor: pointer;
+  background: white;
+  width: 268px;
+  height: 35px;
+  padding-top: 5px;
+  border-bottom: 1px solid  lightgray;
+}
+
+.result-item-link:hover{
+  background-color: lightgray;
 }
 
 .search-avatar{
