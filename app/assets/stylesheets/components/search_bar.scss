@@ -4,7 +4,7 @@
 }
 
 .feather-search{
-  z-index: 2;
+  z-index: 3;
   position: absolute;
   padding-top: 7px;
   padding-left: 7px;
@@ -43,4 +43,21 @@
   font-size: 14px;
   padding-top: 8px;
   padding-left: 10px;
+}
+
+.result-list{
+  position: absolute;
+  padding-top: 20px;
+  list-style: none;
+}
+
+.list-item-link{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.search-avatar{
+  cursor: pointer;
 }

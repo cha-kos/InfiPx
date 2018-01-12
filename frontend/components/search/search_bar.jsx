@@ -1,13 +1,12 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
 
-
 class SearchBar extends React.Component {
   constructor(props){
     super(props);
     this.state = {
       query: "",
-      result: []
+      result: this.props.result
     };
   }
 
@@ -24,16 +23,16 @@ class SearchBar extends React.Component {
     };
   }
 
-  // handleKeyPress(e){
-  //   if (e && e.key === "Enter"){
-  //     this.setState({editing: false}, this.update());
-  //   }
-  // }
+  handleKeyPress(e){
+    if (e && e.key === "Enter"){
+      this.setState({editing: false}, this.update());
+    }
+  }
 
-  // autoFocus(){
-  //   this.nameInput.selectionStart = this.nameInput.selectionEnd = this.nameInput.value.length;
-  //   this.nameInput.focus();
-  // }
+  autoFocus(){
+    this.nameInput.selectionStart = this.nameInput.selectionEnd = this.nameInput.value.length;
+    this.nameInput.focus();
+  }
 
   render(){
     return (
@@ -43,9 +42,22 @@ class SearchBar extends React.Component {
                className="search-input"
                value = {this.state.query}
                onChange = {this.onChange()}
-               type="text"
-               name="search"/>
+               type="text"/>
         <div id="search-cover" className="search-cover"><span id="search-cover-span">Search</span></div>
+        <ul className="result-list">
+          {
+            this.props.result.map((result) => {
+              return (
+                <li className='list-item'>
+                  <Link to={`/users/${result.id}`} className='list-item-link'>
+                    <img className='avatar-image search-avatar' src={result.avatarUrl}/>
+                    <div>{result.username}</div>
+                    <div>{result.fullName}</div>
+                  </Link>
+                </li>);
+            })
+          }
+        </ul>
       </div>
     );
   }

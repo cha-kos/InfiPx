@@ -5,8 +5,7 @@ import SearchBar from './search_bar';
 
 const mapStateToProps = (state) => {
   return({
-    // ????
-    result: state.result,
+    result: state.searchBar.result,
   });
 };
 
