@@ -195,12 +195,18 @@
 }
 
 .profile-icon-div{
-  margin-left: 30px;
+  margin-left: 25px;
   align-items: stretch;
   display: flex;
   white-space: nowrap;
 }
 
+.logout-button{
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-left: 20px;
+}
 .header-login{
   color: #3897f0;
   font-weight: 600;

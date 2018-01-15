@@ -6,7 +6,6 @@ const initialState = { result: [] };
 
 
 const searchReducer = (state = initialState, action) => {
-  debugger
   switch (action.type) {
     case RECEIVE_SEARCH_RESULT:
       let result = Object.assign({}, state, action.result);

@@ -51,8 +51,9 @@
 .result-list{
   // display: none;
   position: absolute;
-  padding-top: 20px;
+  padding-top: 15px;
   list-style: none;
+  border-radius: 3px;
 }
 
 .search-input:focus ~ .result-list{
@@ -62,12 +63,13 @@
 .result-item-link{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
+  align-items: center;
   cursor: pointer;
   background: white;
   width: 268px;
   height: 35px;
-  padding-top: 5px;
+  padding: 5px 0px 5px 20px;
   border-bottom: 1px solid  lightgray;
 }
 
