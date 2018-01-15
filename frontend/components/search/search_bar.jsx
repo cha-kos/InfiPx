@@ -55,7 +55,6 @@ class SearchBar extends React.Component {
                   <Link to={`/users/${result.id}`} className='result-item-link'>
                     <img className='avatar-image search-avatar' src={result.avatarUrl}/>
                     <div>{result.username}</div>
-                    <div>{result.fullName}</div>
                   </Link>
                 </li>);
             })

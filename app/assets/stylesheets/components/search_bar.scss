@@ -54,6 +54,7 @@
   padding-top: 15px;
   list-style: none;
   border-radius: 3px;
+  width: 268px;
 }
 
 .search-input:focus ~ .result-list{
@@ -67,10 +68,13 @@
   align-items: center;
   cursor: pointer;
   background: white;
-  width: 268px;
   height: 35px;
   padding: 5px 0px 5px 20px;
   border-bottom: 1px solid  lightgray;
+  text-decoration: none;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color: black;
+  letter-spacing: 0.7px;
 }
 
 .result-item-link:hover{
