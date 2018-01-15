@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { searchUsers } from '../../actions/search_actions';
+import { searchUsers, CLEAR_SEARCH_RESULT } from '../../actions/search_actions';
 import SearchBar from './search_bar';
 
 const mapStateToProps = (state) => {
@@ -12,6 +12,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dipatch => {
   return({
     searchUsers: (query) => dispatch(searchUsers(query)),
+    clearResult: () => dispatch({type: CLEAR_SEARCH_RESULT})
   });
 };
 

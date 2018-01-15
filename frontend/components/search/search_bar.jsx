@@ -50,7 +50,7 @@ class SearchBar extends React.Component {
             this.props.result.map((result) => {
               return (
                 <li className='result-item' onClick={() => {
-                  this.setState({query: ""}, this.props.searchUsers(""));
+                  this.setState({query: ""}, this.props.clearResult());
                 }}>
                   <Link to={`/users/${result.id}`} className='result-item-link'>
                     <img className='avatar-image search-avatar' src={result.avatarUrl}/>
