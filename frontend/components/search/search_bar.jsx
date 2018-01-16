@@ -6,27 +6,44 @@ class SearchBar extends React.Component {
     super(props);
     this.state = {
       query: "",
-      result: this.props.result
+      cursor: null
     };
   }
 
-  onChange(e){
+  update(e){
     return e => {
       this.setState({query: e.target.value},
         () => this.props.searchUsers(this.state.query));
     };
   }
 
-  update(){
-    return () => {
-      this.props.update(this.state);
-    };
-  }
-
+  // Navigate through the search suggestions using the arrow keys
   handleKeyPress(e){
-    if (e && e.key === "Enter"){
-      this.setState({editing: false}, this.update());
-    }
+    if(!this.props.result[0]){
+      return;
+    }else if (this.state.cursor === null && e.key === "ArrowDown"){
+        this.setState({cursor: 0}, () =>{
+        this.refs[this.state.cursor].focus();
+      });
+    } else if (this.state.cursor >= 0 && e.key === "ArrowDown"){
+      this.setState({cursor: this.state.cursor + 1}, () =>{
+        this.refs[this.state.cursor].focus();
+      });
+    } else if (this.state.cursor > 0 && e.key === "ArrowUp"){
+      this.setState({cursor: this.state.cursor - 1}, () =>{
+        this.refs[this.state.cursor].focus();
+      });
+    } else if (this.state.cursor === 0 && e.key === "ArrowUp"){
+      this.setState({cursor: null});
+    } else if (this.state.cursor >= 0 && e.key === "Enter"){
+      window.location = `/#/users/${this.refs[this.state.cursor].id}`;
+      this.setState({query: "", cursor: null}, this.props.clearResult());
+    } else if (this.state.cursor >= 0 &&
+                e.key != "ArrowUp" ||
+                e.key != "ArrowDown" ||
+                e.key != "Enter") {
+      this.setState({cursor: null});
+                }
   }
 
   autoFocus(){
@@ -41,17 +58,24 @@ class SearchBar extends React.Component {
         <input id="search-input"
                className="search-input"
                value = {this.state.query}
-               onChange = {this.onChange()}
+               onChange = {this.update()}
                ref={(input) => {this.searchInput = input;}}
+               onKeyDown={this.handleKeyPress.bind(this)}
                type="text"/>
         <div id="search-cover" className="search-cover" onClick={() => this.searchInput.focus()}><span id="search-cover-span">Search</span></div>
         <ul className="result-list">
           {
-            this.props.result.map((result) => {
+            this.props.result.map((result, index) => {
               return (
-                <li className='result-item' onClick={() => {
-                  this.setState({query: ""}, this.props.clearResult());
-                }}>
+                <li className={`result-item ${this.state.cursor === index ? 'active' : ''}`}
+                    ref={index}
+                    key={index}
+                    id={result.id}
+                    onClick={() => {
+                        this.setState({query: ""}, this.props.clearResult());
+                      }
+                    }
+                    onKeyDown={() => this.handleKeyPress()}>
                   <Link to={`/users/${result.id}`} className='result-item-link'>
                     <img className='avatar-image search-avatar' src={result.avatarUrl}/>
                     <div>{result.username}</div>
