@@ -6,6 +6,7 @@ import CommentForm from '../comment/comment_form_container';
 import LikeButton from '../like/like_button_container';
 import { deleteComment } from '../../actions/photo_actions.js';
 import CommentList from '../comment/comment_list_container';
+import PhotoUploadButton from '../photo_upload/photo_upload_button_container';
 
 class PhotoIndex extends React.Component{
 
@@ -77,6 +78,7 @@ class PhotoIndex extends React.Component{
              </ul>
            </div>
           </section>
+          <PhotoUploadButton/>
        </div>
 
     );
