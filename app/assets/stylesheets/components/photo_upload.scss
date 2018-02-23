@@ -1,10 +1,19 @@
 .photo-upload-button{
-  background: white;
+  display: flex;
   border: none;
   outline: none;
+  text-align: center;
+  width: 40px;
+  background: transparent;
+}
+
+.photo-upload-button-container{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background: RGBA(255,255,255,0.2);
   position: fixed;
   bottom: 0px;
-  text-align: center;
 }
 
 .drag-and-drop-box{
