@@ -87,11 +87,6 @@ class User < ApplicationRecord
     return photos.reverse
   end
 
-  def self.get_avatar(id)
-    user = User.find(id)
-    return user.avatar.url
-  end
-
 
   def fetch_photo_feed
       Photo
@@ -101,5 +96,11 @@ class User < ApplicationRecord
       .where("follows.follower_id = #{self.id} OR photos.user_id = #{self.id}")
       .order("photos.created_at DESC")
       .limit(15)
+  end
+
+
+  def self.get_avatar(id)
+    user = User.find(id)
+    return user.avatar.url
   end
 end

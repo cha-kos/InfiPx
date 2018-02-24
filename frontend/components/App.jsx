@@ -9,6 +9,7 @@ import Footer from './footer/footer';
 import PhotoIndex from './photo/photo_index_container';
 import PhotoShow from './photo/photo_show_container';
 import Modal from './modal/modal_container';
+import Discover from './discover/discover_container';
 
 const App = () => {
 
@@ -21,6 +22,7 @@ const App = () => {
       <ProtectedRoute exact path='/users/:id' component={UserShow} />
       <ProtectedRoute exact path='/users/:id/edit' component={SessionUserEditForm} />
       <ProtectedRoute exact path='/photos/:id' component={PhotoShow} />
+      <ProtectedRoute exact path='/discover' component={Discover} />
     <Footer/>
   </div>
 );};
