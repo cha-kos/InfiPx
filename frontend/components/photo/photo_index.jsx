@@ -45,7 +45,13 @@ class PhotoIndex extends React.Component{
                           <Link to={`/users/${photo.user_id}`} className='author-name'> {photo.username}</Link>
                         </div>
                       </header>
-                      <div className='photo-item-container'>
+                      <div className='photo-item-container' onDoubleClick={() => {
+                                                                              if(!photo.viewer_liked){
+                                                                                this.props.createLike({photo_id: photo.id});
+                                                                              } else {
+                                                                                this.props.deleteLike({id: photo.viewer_like_id, photo_id: photo.id})
+                                                                              }
+                                                                            }}>
                         <img className='image' src={photo.image_url}/>
                       </div>
                       <div className='like-comments-container'>
