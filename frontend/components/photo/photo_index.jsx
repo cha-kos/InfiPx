@@ -10,6 +10,11 @@ import PhotoUploadButton from '../photo_upload/photo_upload_button_container';
 
 class PhotoIndex extends React.Component{
 
+  constructor(props){
+    super(props);
+    this.state = {doubleClicked: false};
+  }
+
 
   componentDidMount(){
     this.props.requestAllPhotos();
@@ -25,6 +30,16 @@ class PhotoIndex extends React.Component{
       })}
       </ul>
     );
+  }
+
+  handleDoubleClick(photo){
+    if(!photo.viewer_liked){
+      this.props.createLike({photo_id: photo.id});
+      this.setState({doubleClicked: true});
+      // window.setTimeOut(this.setState({doubleClicked: false}, 1000));
+    } else {
+      this.props.deleteLike({id: photo.viewer_like_id, photo_id: photo.id});
+    }
   }
 
 
@@ -45,13 +60,18 @@ class PhotoIndex extends React.Component{
                           <Link to={`/users/${photo.user_id}`} className='author-name'> {photo.username}</Link>
                         </div>
                       </header>
-                      <div className='photo-item-container' onDoubleClick={() => {
-                                                                              if(!photo.viewer_liked){
-                                                                                this.props.createLike({photo_id: photo.id});
-                                                                              } else {
-                                                                                this.props.deleteLike({id: photo.viewer_like_id, photo_id: photo.id})
-                                                                              }
-                                                                            }}>
+                      <div className='photo-item-container' onDoubleClick={() => this.handleDoubleClick(photo)}>
+                      {(() => {
+                          if(this.state.doubleClicked){
+                            return (
+                              <div className="image-heart" ref="imageHeart">
+                                <svg  xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="white" stroke="white" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
+                              </div>
+                            );
+                          }
+                        })()}
                         <img className='image' src={photo.image_url}/>
                       </div>
                       <div className='like-comments-container'>
