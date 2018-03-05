@@ -8,6 +8,12 @@ export const searchUsers = (query) => (dispatch) => {
   ));
 };
 
+export const discoverUsers = (query) => (dispatch) => {
+  return (APIUtil.searchUsers(query)
+    .then(result => dispatch(receiveSearchResult(result))
+  ));
+};
+
 const receiveSearchResult = (result) => {
   return {
     type: RECEIVE_SEARCH_RESULT,
