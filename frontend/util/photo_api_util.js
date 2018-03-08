@@ -53,7 +53,6 @@ export const deleteLike = (like) => {
 };
 
 export const addComment = ( comment ) => {
-
   return $.ajax({
     method: 'POST',
     url: `api/comments`,

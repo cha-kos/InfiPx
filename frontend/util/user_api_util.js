@@ -1,5 +1,4 @@
 export const updateUser = ( user ) => {
-
   return $.ajax({
     method: 'PATCH',
     url: `/api/users/${user.id}`,
@@ -8,7 +7,6 @@ export const updateUser = ( user ) => {
 };
 
 export const updateUserAvatar = ( user ) => {
-
   return $.ajax({
     method: 'PATCH',
     url: `/api/users/${user.id}`,
@@ -34,7 +32,6 @@ export const addFollow = ( follow ) => {
 };
 
 export const deleteFollow = ( follow ) => {
-
   return $.ajax({
     method: 'DELETE',
     url: `api/follows/${follow.id}`,
